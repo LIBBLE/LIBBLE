@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html" dir="ltr">
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -110,12 +110,46 @@
                                 <div class="post_body">
 
                                     <li style="font-size: large;color: mediumblue">Import LIBBLE</li>
-                                    <p>
-                                        First, download <a
-                                            href="https://github.com/LIBBLE/LIBBLE-Spark/releases/download/0.0.1/libble-spark-0.0.1.jar">libble.jar</a>,
-                                        and make the jar file as a dependency of your project. Then you can use the
-                                        algorithms after you import it.
-                                    </p>
+                                    <ur>
+                                        <li>
+                                            For maven:
+                                        </li>
+
+                                        Add repository:
+                                        <code>
+<pre>
+    &lt;repository&gt;
+        &lt;Id&gt;LIBBLE-Spark&lt;/Id&gt;
+        &lt;url&gt;https://github.com/LIBBLE/LIBBLE-Spark/${libble.spark.version}&lt;/url&gt;
+        &lt;snapshots&gt;
+            &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;updatePolicy&gt;always&lt;/updatePolicy&gt;
+    &lt;/repository&gt;
+</pre>
+                                        </code>
+                                        Add dependency:
+                                        <code>
+<pre>
+    &lt;dependency&gt;
+        &lt;groupId&gt;LIBBLE&lt;/groupId&gt;
+        &lt;artifactId&gt;LIBBLE-Spark&lt;/artifactId&gt;
+        &lt;version&gt;${libble.spark.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+</pre>
+                                        </code>
+
+                                        <li> For sbt</li>
+                                        Add follows into the build.sbt:
+                                        <code>
+                                            <pre>
+libraryDependencies +="LIBBLE"%%"LIBBLE-Spark"%"1.0.1-SNAPSHOTS"
+resolvers ++= Seq(
+"LIBBLE-Spark Releases" at "https://github.com/LIBBLE/LIBBLE-Spark/1.0.1"
+)
+                                            </pre>
+                                        </code>
+
+                                    </ur>
 
                                     <li style="font-size: large;color: mediumblue">Load and Save Data</li>
                                     <p> LIBBLE-Spark supports two formats of input data: LIBSVM input format for sparse
@@ -132,7 +166,7 @@
 
                                     <p>We use the method saveAsLIBBLEFile to save Data to the File System:
                                         <code>
-                                            import LIBBLE.context.LibContext.RDD2LIBBLERDD<br/>
+                                            import libble.context.LibContext.RDD2LIBBLERDD<br/>
                                             training.saveAsLIBBLEFile("this.data")<br/>
 
                                         </code>
@@ -232,10 +266,12 @@
                             </div>
                             <div class="post">
 
-                                <div class="post_title" style="padding-top: 1em"><h2><a href="api/index.html" name="API">API</a>
+                                <div class="post_title" style="padding-top: 1em"><h2><a href="api/index.html"
+                                                                                        name="API">API</a>
                                 </h2></div>
                                 <div class="post_body">
-                                   Please click <a href="api/index.html"> here</a> for checking the Application Programming Interface documents.
+                                    Please click <a href="api/index.html"> here</a> for checking the Application
+                                    Programming Interface documents.
 
                                 </div>
                             </div>
