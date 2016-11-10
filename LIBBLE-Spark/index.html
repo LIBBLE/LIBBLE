@@ -120,10 +120,13 @@
 <pre>
     &lt;repository&gt;
         &lt;Id&gt;LIBBLE-Spark&lt;/Id&gt;
-        &lt;url&gt;https://github.com/LIBBLE/LIBBLE-Spark/${libble.spark.version}&lt;/url&gt;
+        &lt;url&gt;
+            https://github.com/LIBBLE/LIBBLE-Spark/${libble.spark.version}
+        &lt;/url&gt;
         &lt;snapshots&gt;
             &lt;enabled&gt;true&lt;/enabled&gt;
             &lt;updatePolicy&gt;always&lt;/updatePolicy&gt;
+        &lt;/snapshots&gt;
     &lt;/repository&gt;
 </pre>
                                         </code>
@@ -144,7 +147,8 @@
                                             <pre>
 libraryDependencies +="LIBBLE"%"LIBBLE-Spark"%"1.0.1-SNAPSHOT"
 resolvers ++= Seq(
-"LIBBLE-Spark Releases" at "https://github.com/LIBBLE/LIBBLE-Spark/1.0.1-SNAPSHOT"
+"LIBBLE-Spark Releases" at
+"https://github.com/LIBBLE/LIBBLE-Spark/1.0.1-SNAPSHOT"
 )
                                             </pre>
                                         </code>
