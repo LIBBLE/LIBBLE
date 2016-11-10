@@ -119,7 +119,7 @@
                                         <code>
 <pre>
     &lt;repository&gt;
-        &lt;Id&gt;LIBBLE-Spark&lt;/Id&gt;
+        &lt;Id&gt;libble-spark&lt;/Id&gt;
         &lt;url&gt;
             https://github.com/LIBBLE/LIBBLE-Spark/${libble.spark.version}
         &lt;/url&gt;
@@ -134,24 +134,13 @@
                                         <code>
 <pre>
     &lt;dependency&gt;
-        &lt;groupId&gt;LIBBLE&lt;/groupId&gt;
-        &lt;artifactId&gt;LIBBLE-Spark&lt;/artifactId&gt;
+        &lt;groupId&gt;libble&lt;/groupId&gt;
+        &lt;artifactId&gt;libble-spark&lt;/artifactId&gt;
         &lt;version&gt;${libble.spark.version}&lt;/version&gt;
     &lt;/dependency&gt;
 </pre>
                                         </code>
 
-                                        <li> For sbt</li>
-                                        Add follows into the build.sbt:
-                                        <code>
-                                            <pre>
-libraryDependencies +="LIBBLE"%"LIBBLE-Spark"%"1.0.1-SNAPSHOT"
-resolvers ++= Seq(
-"LIBBLE-Spark Releases" at
-"https://github.com/LIBBLE/LIBBLE-Spark/1.0.1-SNAPSHOT"
-)
-                                            </pre>
-                                        </code>
 
                                     </ur>
 
