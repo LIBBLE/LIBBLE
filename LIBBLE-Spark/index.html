@@ -121,12 +121,8 @@
 &lt;repository&gt;
     &lt;Id&gt;libble-spark&lt;/Id&gt;
     &lt;url&gt;
-        https://github.com/LIBBLE/LIBBLE-Spark/${libble.spark.version}
+        https://libble.github.io/mvn-repo/
     &lt;/url&gt;
-    &lt;snapshots&gt;
-        &lt;enabled&gt;true&lt;/enabled&gt;
-        &lt;updatePolicy&gt;always&lt;/updatePolicy&gt;
-    &lt;/snapshots&gt;
 &lt;/repository&gt;
 </pre>
                                         </code>
@@ -135,13 +131,25 @@
 <pre>
 &lt;dependency&gt;
     &lt;groupId&gt;libble&lt;/groupId&gt;
-    &lt;artifactId&gt;libble-spark&lt;/artifactId&gt;
+    &lt;artifactId&gt;libble-spark_${scala.binary}&lt;/artifactId&gt;
     &lt;version&gt;${libble.spark.version}&lt;/version&gt;
 &lt;/dependency&gt;
 </pre>
                                         </code>
 
+                                        <li> For sbt</li>
+                                        Add follows into the build.sbt:
+                                        <code>
+                                            <pre>
+libraryDependencies +="libble"%%"libble-spark"%"1.0.1-SNAPSHOT"
+resolvers ++= Seq(
+"libble Releases" at
+"https://libble.github.io/mvn-repo/"
+)
+                                            </pre>
+                                        </code>
 
+                                    </ur>
 
                                     <li style="font-size: large;color: mediumblue">Load and Save Data</li>
                                     <p> LIBBLE-Spark supports two formats of input data: LIBSVM input format for sparse
