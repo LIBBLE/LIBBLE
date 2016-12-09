@@ -87,6 +87,7 @@
                                             <li>Regression</li>
                                             <ul>
                                                 <li>Linear Regression</li>
+                                                <li>Lasso</li>
                                             </ul>
                                             <li>Dimensionality Reduction</li>
                                             <ul>
@@ -96,6 +97,10 @@
                                             <ul>
                                                 <li> Singular Value Decomposition (SVD)</li>
                                             </ul>
+                                            <li>Clustering</li>
+                                            <ur>
+                                                <li>KMeans</li>
+                                            </ur>
                                         </ul>
                                     </div>
                                     </p>
@@ -177,7 +182,7 @@ resolvers ++= Seq(
                                         Regression and SVM are similar. You can find the complete codes in the package
                                         "examples" .
                                         <code>
-                                            val training = sc.loadLIBBLEFile(args(0), numPart)<br/>
+                                            val training = sc.loadLIBBLEFile(path, numPart)<br/>
 
                                             val m = new LogisticRegression(stepSize, regParam, elasticF,
                                             numIter,numPart)<br> &nbsp;&nbsp;&nbsp;&nbsp;.setClassNum(10)<br>
@@ -194,8 +199,8 @@ resolvers ++= Seq(
                                     <p>
                                         In our framework, you are allowed to define your own generalized linear models
                                         by using our learning engine to optimize. You can define your loss function by
-                                        implementing the interface of the abstract class LossFunc, and define your own
-                                        regularizer too. Here, we give an example of GeneralizedLinearModel:
+                                        implementing the interface of the abstract class LossFunc.
+                                        Here, we give an example of GeneralizedLinearModel:
 
 
                                         <code>
@@ -203,8 +208,8 @@ resolvers ++= Seq(
 
                                             val m=new GeneralizedLinearModel(stepSize, regParam, elasticF, numIter,
                                             numPart)<br/>
-                                            &nbsp;&nbsp;.setLossFunc(new LogisticLoss())<br/>
-                                            &nbsp;&nbsp;.setRegularizer(new L1Reg)<br/>
+                                            &nbsp;&nbsp;.setLossFunc(new selfDefinedLoss())<br/>
+                                            &nbsp;&nbsp;.setUpdater(new L1Updater)<br/>
                                             m.train(training)<br/>
                                         </code>
 
@@ -244,6 +249,8 @@ resolvers ++= Seq(
                                             v.foreach(x=>println(x))<br/>
                                         </code>
                                     </p>
+
+
 
 
                                 </div>
@@ -290,6 +297,7 @@ resolvers ++= Seq(
 
                                 <div class="box_content">
                                     <ul>
+                                        <li><a href="../news.html#version-1.0.1"> High-Dimensional Sparse Data Support</a></li>
                                         <li><a href="index.html">LIBBLE-Spark Online</a></li>
                                     </ul>
                                 </div>
