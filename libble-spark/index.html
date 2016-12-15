@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LIBBLE</title>
+    <meta name="description" content="A Library for Big Learning">
+
+    <link rel="stylesheet" href="/LIBBLE-docs/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/LIBBLE-docs/libble-spark/">
+    <link rel="alternate" type="application/rss+xml" title="LIBBLE" href="http://localhost:4000/LIBBLE-docs/feed.xml" />
+
+    <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+	<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+
+
+  <body>
+  <div class="page">
+    <header class="site-header">
+    <a class="site-title" href="/LIBBLE-docs/">LIBBLE</a>
+	<a class="site-description"> A Library for Big Learning</a>
+    <nav class="site-nav">
+        <a href="#" class="menu-icon menu.open">
+            <svg viewBox="0 0 18 15">
+                <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </a>
+        <div class="trigger"><h1>Main Navigation</h1>
+            <ul class="menu">
+    
+    
+     <li><a href="/LIBBLE-docs/" class="page-link">HOME</a>
+    
+    </li>
+    
+    
+    <li><a href="/LIBBLE-docs/libble-spark/" class="page-link">LIBBLE-Spark</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/LIBBLE-docs/libble-spark/#introduction">Introduction</a></li>
+    
+    <li><a href="/LIBBLE-docs/libble-spark/#tutorial">Tutorial</a></li>
+    
+    <li><a href="/LIBBLE-docs/libble-spark/#open-source">Open Source</a></li>
+    
+    <li><a href="/LIBBLE-docs/libble-spark/#api">API</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    
+     <li><a href="/LIBBLE-docs/publications/" class="page-link">Publications</a>
+    
+    </li>
+    
+    
+    <li><a href="/LIBBLE-docs/downloads" class="page-link">Downloads</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/LIBBLE-docs/downloads/#libble-spark/">LIBBLE-Spark</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    
+     <li><a href="/LIBBLE-docs/news/" class="page-link">News</a>
+    
+    </li>
+    
+</ul>
+
+        </div>
+    </nav>
+</header>
+
+
+    <div class="post">
+    <header class="post-header">
+        <h1></h1>
+    </header>
+
+    <h2 id="libble-spark">LIBBLE-Spark</h2>
+
+<h3 id="introduction"><a href="#introduction">Introduction</a></h3>
+
+<p>LIBBLE-Spark is part of the Project LIBBLE. The current version of LIBBLE-Spark includes the following machine learning algorithms:</p>
+
+<blockquote>
+  <ul>
+    <li>Classification
+      <ul>
+        <li>Logistic Regression (LR)</li>
+        <li>Support Vector Machine (SVM)</li>
+      </ul>
+    </li>
+    <li>Regression
+      <ul>
+        <li>Linear Regression</li>
+        <li>Lasso</li>
+      </ul>
+    </li>
+    <li>Dimensionality Reduction
+      <ul>
+        <li>Principal Component Analysis (PCA)</li>
+        <li>Singular Value Decomposition (SVD)</li>
+      </ul>
+    </li>
+    <li>Clustering
+      <ul>
+        <li>KMeans</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="tutorial"><a href="#tutorial">Tutorial</a></h3>
+
+<ul>
+  <li>
+    <h4 id="import-libble">Import LIBBLE</h4>
+
+    <ul>
+      <li>
+        <p>For maven</p>
+
+        <p>Add repository:</p>
+
+        <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;repository&gt;</span>
+    <span class="nt">&lt;Id&gt;</span>libble-spark<span class="nt">&lt;/Id&gt;</span>
+    <span class="nt">&lt;url&gt;</span>
+        https://libble.github.io/mvn-repo/
+    <span class="nt">&lt;/url&gt;</span>
+<span class="nt">&lt;/repository&gt;</span>
+</code></pre>
+        </div>
+
+        <p>Add dependency:</p>
+
+        <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>libble<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>libble-spark_${scala.binary}<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>${libble.spark.version}<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>For sbt:</p>
+
+        <p>Add follows into the build.sbt:</p>
+
+        <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">libraryDependencies</span> <span class="o">+=</span><span class="s2">"libble"</span><span class="o">%%</span><span class="s2">"libble-spark"</span><span class="o">%</span><span class="s2">"1.0.1-SNAPSHOT"</span>
+<span class="nx">resolvers</span> <span class="o">++=</span> <span class="nx">Seq</span><span class="p">(</span>
+<span class="s2">"libble Releases"</span> <span class="nx">at</span> <span class="s2">"https://libble.github.io/mvn-repo/"</span>
+<span class="p">)</span>
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h4 id="load-and-save-data">Load and Save Data</h4>
+
+    <p>LIBBLE-Spark supports two formats of input data: LIBSVM input format for sparse features; If the features are dense, each line is an instance, with the label and features separated by a space. The function for loading data is loadLIBBLEFile.</p>
+
+    <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">conf</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SparkConf</span><span class="o">()</span>
+<span class="k">val</span> <span class="n">sc</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SparkContext</span><span class="o">(</span><span class="n">conf</span><span class="o">)</span>
+<span class="k">import</span> <span class="nn">libble.context.LibContext.sc2LibContext</span>
+<span class="k">val</span> <span class="n">training</span><span class="k">=</span><span class="n">sc</span><span class="o">.</span><span class="n">loadLIBBLEFile</span><span class="o">(</span><span class="s">"sparse.data"</span><span class="o">)</span>
+</code></pre>
+    </div>
+
+    <p>We use the method saveAsLIBBLEFile to save Data to the File System:</p>
+
+    <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="nn">libble.context.LibContext.RDD2LIBBLERDD</span>
+<span class="n">training</span><span class="o">.</span><span class="n">saveAsLIBBLEFile</span><span class="o">(</span><span class="s">"this.data"</span><span class="o">)</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Classification and Regression</p>
+
+    <p>Here, we give an example of using Logistic Regression. The usages of Linear Regression and SVM are similar. You can find the complete codes in the package “examples”.</p>
+
+    <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">training</span> <span class="k">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">loadLIBBLEFile</span><span class="o">(</span><span class="n">path</span><span class="o">,</span> <span class="n">numPart</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">m</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">LogisticRegression</span><span class="o">(</span><span class="n">stepSize</span><span class="o">,</span> <span class="n">regParam</span><span class="o">,</span> <span class="n">elasticF</span><span class="o">,</span> <span class="n">numIter</span><span class="o">,</span><span class="n">numPart</span><span class="o">)</span>
+    <span class="o">.</span><span class="n">setClassNum</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">train</span><span class="o">(</span><span class="n">training</span><span class="o">)</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Self-Defined Generalized Linear Model</p>
+
+    <p>In our framework, you are allowed to define your own generalized linear models by using our learning engine to optimize. You can define your loss function by implementing the interface of the abstract class LossFunc. Here, we give an example of GeneralizedLinearModel:</p>
+
+    <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">training</span> <span class="k">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">loadLIBBLEFile</span><span class="o">(</span><span class="n">args</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">numPart</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">m</span><span class="k">=new</span> <span class="nc">GeneralizedLinearModel</span><span class="o">(</span><span class="n">stepSize</span><span class="o">,</span> <span class="n">regParam</span><span class="o">,</span> <span class="n">elasticF</span><span class="o">,</span> <span class="n">numIter</span><span class="o">,</span> <span class="n">numPart</span><span class="o">)</span>
+  <span class="o">.</span><span class="n">setLossFunc</span><span class="o">(</span><span class="k">new</span> <span class="n">selfDefinedLoss</span><span class="o">())</span>
+  <span class="o">.</span><span class="n">setUpdater</span><span class="o">(</span><span class="k">new</span> <span class="n">L1Updater</span><span class="o">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">train</span><span class="o">(</span><span class="n">training</span><span class="o">)</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Dimensionality Reduction</p>
+
+    <p>Principal Component Analysis (PCA) is a widely used method for dimensionality reduction. An example to perform dimensionality reduction with PCA is shown as follows:</p>
+
+    <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">training</span> <span class="k">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">loadLIBBLEFile</span><span class="o">(</span><span class="n">args</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">numPart</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">mypca</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">PCA</span><span class="o">(</span><span class="n">K</span><span class="o">,</span> <span class="n">bound</span><span class="o">,</span> <span class="n">stepSize</span><span class="o">,</span> <span class="n">numIters</span><span class="o">,</span> <span class="n">numPart</span><span class="o">,</span> <span class="n">batchSize</span><span class="o">)</span>
+<span class="k">val</span> <span class="nc">PCAModel</span> <span class="k">=</span> <span class="n">mypca</span><span class="o">.</span><span class="n">train</span><span class="o">(</span><span class="n">training</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">pc</span> <span class="k">=</span> <span class="nc">PCAModel</span><span class="o">.</span><span class="n">_2</span>
+<span class="k">val</span> <span class="n">projected</span> <span class="k">=</span> <span class="n">mypca</span><span class="o">.</span><span class="n">transform</span><span class="o">(</span><span class="n">training</span><span class="o">,</span> <span class="n">pc</span><span class="o">)</span>
+<span class="n">projected</span><span class="o">.</span><span class="n">collect</span><span class="o">().</span><span class="n">foreach</span><span class="o">(</span><span class="n">x</span><span class="k">=&gt;</span><span class="n">println</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="n">features</span><span class="o">))</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h3 id="open-source"><a href="#open-source">Open Source</a></h3>
+
+<ul>
+  <li>GitHub URL: <a href="https://github.com/LIBBLE/LIBBLE-Spark/">https://github.com/LIBBLE/LIBBLE-Spark/</a></li>
+  <li>Licence: This project follows <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache Licence 2.0</a></li>
+</ul>
+
+<h3 id="api"><a href="#api">API</a></h3>
+
+<p>Please click <a href="https://libble.github.io/LIBBLE-docs/LIBBLE-Spark/api/index.html">here</a> to check the Application Programming Interface documents.</p>
+
+</div>
+
+
+    <footer class="site-footer">
+    A Library for Big Learning<br />
+
+    Using <a href="http://jekyllrb.com/">Jekyll</a>
+    
+     :: <a href="https://github.com/LIBBLE/LIBBLE-Spark">Website source</a>
+    
+    
+</footer>
+
+
+    
+
+    </div>
+  </body>
+
+</html>
