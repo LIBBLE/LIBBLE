@@ -10,7 +10,7 @@
     <meta name="description" content="A Library for Big Learning">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="canonical" href="http://localhost:4000/news/">
     <link rel="alternate" type="application/rss+xml" title="LIBBLE" href="http://localhost:4000/feed.xml" />
 
     <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
@@ -117,71 +117,29 @@
         <h1></h1>
     </header>
 
-    <h3 id="introduction"><a href="#introduction">Introduction</a></h3>
+    <h2 id="news">News</h2>
 
-<p>LIBBLE is the abbreviation for “a LIBrary for Big LEarning”, which provides a toolbox for big data machine learning and data science. We are planning to implement LIBBLE on different distributed platforms, and the version implemented on <a href="http://spark.apache.org/">Spark</a> is called <a href="/LIBBLE-Spark">LIBBLE-Spark</a>.</p>
+<ul class="listing">
 
-<p>LIBBLE is developed by a team under the supervision of Dr. Wu-Jun Li, an Associate Professor at Nanjing University.</p>
+  
+  
 
-<h3 id="empirical-comparison"><a href="#empirical-comparison">Empirical Comparison</a></h3>
-
-<p>The main Learning Engine for LIBBLE is based on a distributed stochastic optimization algorithm called <a href="http://arxiv.org/abs/1602.00133">SCOPE (Scalable Composite OPtimization for lEarning)</a>. SCOPE is both computation-efficient and communication-efficient. Theoretical analysis shows that SCOPE is convergent with linear convergence rate when the objective function is strongly convex. Furthermore, empirical results on real datasets show that SCOPE can outperform other state-of-the-art distributed learning methods on Spark, including both batch learning methods and stochastic learning methods.</p>
-
-<ul>
-  <li>
-    <p>Efficiency</p>
-
-    <p>To compare efficiency with state-of-the-art machine learning methods on Spark, we choose logistic regression (LR) with a L2-norm regularization term to evaluate SCOPE and other baselines. The result on MNIST-8M dataset is shown below. We can find that SCOPE outperforms all the other baselines.</p>
-
-    <div align="center">
-
-
-<img src="images/mnist.png" width="500px" text-align="center" />
-
-</div>
+    
+    <li class="listing-seperator">2016</li>
+  
+  <li class="listing-item">
+    <time datetime="2016-11-09">2016-11-09</time>
+    <a href="/blog/2016/11/09/LIBBLE-Spark-1.0.1-update" title="High-Dimensional Sparse Data Support">High-Dimensional Sparse Data Support</a>
   </li>
-  <li>
-    <p>Speedup</p>
 
-    <p>The speedup is defined as follows: $speedup= \frac{{time with 16 cores}}{{time with 2x cores}}$. And we choose $x$. The speedup result is shown below, where we can find that SCOPE has a super-linear speedup, which might be reasonable due to the higher cache hit ratio with more machines. The good speedup of SCOPE can be explained by the fact that most training work can be locally completed by each Worker and SCOPE does not need much communication cost.</p>
-
-    <div align="center">
-
-<img src="images/speedUp.png" width="500px" />
-
-</div>
+  
+  
+  <li class="listing-item">
+    <time datetime="2016-06-03">2016-06-03</time>
+    <a href="/blog/2016/06/03/LIBBLE-Spark-Online" title="LIBBLE-Spark Online">LIBBLE-Spark Online</a>
   </li>
-  <li>
-    <p>Synchronization Cost</p>
 
-    <p>The following figure shows the synchronization cost, which contains both communication time and waiting time. The synchronization cost of SCOPE is low because most computation is completed locally and only a small number of synchronization times is needed.</p>
-
-    <div align="center">
-
-​
-
-<img src="images/time.png" width="500px" />
-
-</div>
-  </li>
 </ul>
-
-<h3 id="about-us"><a href="#about-us">About us</a></h3>
-
-<ul>
-  <li>
-    <p>Director: <a href="http://cs.nju.edu.cn/lwj/">Wu-Jun Li</a></p>
-  </li>
-  <li>
-    <p>Developers: <a href="http://lamda.nju.edu.cn/xiangr">Ru Xiang</a>          <a href="http://lamda.nju.edu.cn/gaop">Peng Gao</a>          <a href="http://lamda.nju.edu.cn/shiyh">Ying-Hao Shi</a></p>
-  </li>
-  <li>
-    <p>Theory and Algorithm Designers: <a href="http://lamda.nju.edu.cn/zhaosy">Shen-Yi Zhao</a>            <a href="http://cs.nju.edu.cn/lwj/">Wu-Jun Li</a></p>
-
-    <p>​</p>
-  </li>
-</ul>
-
 
 </div>
 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LIBBLE</title>
+    <description>A Library for Big Learning</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 16 Dec 2016 00:01:29 +0800</pubDate>
+    <lastBuildDate>Fri, 16 Dec 2016 00:01:29 +0800</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>High-Dimensional Sparse Data Support</title>
+        <description>&lt;p&gt;With the update of  LIBBLE-Spark 1.0.1, we provide High-Dimensional Sparse Data Support!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 09 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/blog/2016/11/09/LIBBLE-Spark-1.0.1-update</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2016/11/09/LIBBLE-Spark-1.0.1-update</guid>
+        
+        
+        <category>online</category>
+        
+      </item>
+    
+      <item>
+        <title>LIBBLE-Spark Online</title>
+        <description>&lt;p&gt;LIBBLE-Spark online&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Jun 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/blog/2016/06/03/LIBBLE-Spark-Online</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/2016/06/03/LIBBLE-Spark-Online</guid>
+        
+        
+        <category>online</category>
+        
+      </item>
+    
+  </channel>
+</rss>
