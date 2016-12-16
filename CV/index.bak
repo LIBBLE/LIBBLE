@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LIBBLE :: CV</title>
+    <meta name="description" content="A Library for Big Learning">
+
+    <link rel="stylesheet" href="/LIBBLE-docs/css/main.css">
+    <link rel="canonical" href="https://libble.github.io/LIBBLE-docs/cv/">
+    <link rel="alternate" type="application/rss+xml" title="LIBBLE" href="https://libble.github.io/LIBBLE-docs/feed.xml" />
+
+    <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+	<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+
+
+  <body>
+  <div class="page">
+    <header class="site-header">
+    <a class="site-title" href="/LIBBLE-docs/">LIBBLE</a>
+	<a class="site-description"> A Library for Big Learning</a>
+    <nav class="site-nav">
+        <a href="#" class="menu-icon menu.open">
+            <svg viewBox="0 0 18 15">
+                <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </a>
+        <div class="trigger"><h1>Main Navigation</h1>
+            <ul class="menu">
+    
+    
+     <li><a href="/LIBBLE-docs/" class="page-link">HOME</a>
+    
+    </li>
+    
+    
+    <li><a href="/LIBBLE-docs/libble-spark/" class="page-link">LIBBLE-Spark</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/LIBBLE-docs/libble-spark/#introduction">Introduction</a></li>
+    
+    <li><a href="/LIBBLE-docs/libble-spark/#tutorial">Tutorial</a></li>
+    
+    <li><a href="/LIBBLE-docs/libble-spark/#open-source">Open Source</a></li>
+    
+    <li><a href="/LIBBLE-docs/libble-spark/#api">API</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    
+     <li><a href="/LIBBLE-docs/publications/" class="page-link">Publications</a>
+    
+    </li>
+    
+    
+    <li><a href="/LIBBLE-docs/downloads/" class="page-link">Downloads</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/LIBBLE-docs/downloads/#libble-spark">LIBBLE-Spark</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    
+     <li><a href="/LIBBLE-docs/news/" class="page-link">News</a>
+    
+    </li>
+    
+</ul>
+
+        </div>
+    </nav>
+</header>
+
+
+    <div class="post">
+    <header class="post-header">
+        <h1>CV</h1>
+    </header>
+
+    Download [PDF version](http://nitens.org/img/cvtex/cv_template_xetex_caslon.pdf). The PDF should be embedded underneath -- uses Google Docs for embedding and works if the PDF is on dropbox. Works sporadically if PDF is elsewhere too.
+
+<iframe src="http://docs.google.com/viewer?url=http://nitens.org/img/cvtex/cv_template_xetex_caslon.pdf&hl=en_US&embedded=true" style="width:100%; height:800px; border:0;" scrolling="no"></iframe>
+
+
+</div>
+
+
+    <footer class="site-footer">
+    A Library for Big Learning<br />
+
+    Using <a href="http://jekyllrb.com/">Jekyll</a>
+    
+     :: <a href="https://github.com/LIBBLE/LIBBLE-Spark">Website source</a>
+    
+    
+</footer>
+
+
+    
+
+    </div>
+  </body>
+
+</html>
