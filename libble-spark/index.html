@@ -10,8 +10,8 @@
     <meta name="description" content="A Library for Big Learning">
 
     <link rel="stylesheet" href="/LIBBLE-docs/css/main.css">
-    <link rel="canonical" href="http://localhost:4000/LIBBLE-docs/libble-spark/">
-    <link rel="alternate" type="application/rss+xml" title="LIBBLE" href="http://localhost:4000/LIBBLE-docs/feed.xml" />
+    <link rel="canonical" href="https://libble.github.io/LIBBLE-docs/libble-spark/">
+    <link rel="alternate" type="application/rss+xml" title="LIBBLE" href="https://libble.github.io/LIBBLE-docs/feed.xml" />
 
     <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
 	<!-- mathjax config similar to math.stackexchange -->
@@ -128,6 +128,7 @@
     <li>Classification
       <ul>
         <li>Logistic Regression (LR)</li>
+        <li>Logistic Regression with L1 (Lasso)</li>
         <li>Support Vector Machine (SVM)</li>
       </ul>
     </li>
@@ -145,7 +146,7 @@
     </li>
     <li>Clustering
       <ul>
-        <li>KMeans</li>
+        <li>K-Means</li>
       </ul>
     </li>
     <li>Collaborative Filtering
@@ -258,6 +259,43 @@
 <span class="n">projected</span><span class="o">.</span><span class="n">collect</span><span class="o">().</span><span class="n">foreach</span><span class="o">(</span><span class="n">x</span><span class="k">=&gt;</span><span class="n">println</span><span class="o">(</span><span class="n">x</span><span class="o">.</span><span class="n">features</span><span class="o">))</span>
 </code></pre>
     </div>
+
+    <p>Singular value decomposition (SVD) is a popular matrix decomposition/factorization method in linear algebra and machine learning. An example to perform dimensionality reduction with SVD is shown as follows:</p>
+
+    <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">training</span> <span class="k">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">loadLIBBLEFile</span><span class="o">(</span><span class="n">args</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">numPart</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">mysvd</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SVD</span><span class="o">(</span><span class="n">K</span><span class="o">,</span> <span class="n">bound</span><span class="o">,</span> <span class="n">stepSize</span><span class="o">,</span> <span class="n">numIters</span><span class="o">,</span> <span class="n">numPart</span><span class="o">,</span> <span class="n">batchSize</span><span class="o">)</span>
+<span class="k">val</span> <span class="nc">SVDModel</span> <span class="k">=</span> <span class="n">mysvd</span><span class="o">.</span><span class="n">train</span><span class="o">(</span><span class="n">training</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">sigma</span> <span class="k">=</span> <span class="nc">SVDModel</span><span class="o">.</span><span class="n">_1</span>
+<span class="k">val</span> <span class="n">v</span> <span class="k">=</span> <span class="nc">SVDModel</span><span class="o">.</span><span class="n">_2</span>
+<span class="n">sigma</span><span class="o">.</span><span class="n">foreach</span><span class="o">(</span><span class="n">x</span><span class="k">=&gt;</span><span class="n">print</span><span class="o">(</span><span class="n">x</span><span class="o">+</span><span class="s">","</span><span class="o">))</span>
+<span class="n">v</span><span class="o">.</span><span class="n">foreach</span><span class="o">(</span><span class="n">x</span><span class="k">=&gt;</span><span class="n">println</span><span class="o">(</span><span class="n">x</span><span class="o">))</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Clustering</p>
+
+    <p>K-Means is a widely used prototype-based clustering algorithms. An example to perform clustering with K-Means is shown as follows:</p>
+
+    <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">training</span> <span class="k">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">loadLIBBLEFile</span><span class="o">(</span><span class="n">args</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span>
+<span class="k">val</span> <span class="n">m</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">KMeans</span><span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">maxIters</span><span class="o">,</span> <span class="n">stopBound</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">data</span> <span class="k">=</span> <span class="n">training</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">e</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="n">label</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="n">features</span><span class="o">))</span>
+<span class="n">m</span><span class="o">.</span><span class="n">train</span><span class="o">(</span><span class="n">data</span><span class="o">)</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Collaborative Filtering</p>
+
+    <p>Collaborative filtering is widly used in recommendation systems. An example to perform collaborative filtering with  the UV matrix factorization is shown as follows:</p>
+
+    <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">trainSet</span> <span class="k">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">textFile</span><span class="o">(</span><span class="n">args</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="n">numParts</span><span class="o">)</span>
+    <span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">split</span><span class="o">(</span><span class="sc">','</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span> <span class="k">case</span> <span class="nc">Array</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">item</span><span class="o">,</span> <span class="n">rate</span><span class="o">)</span> <span class="k">=&gt;</span>
+        <span class="nc">Rating</span><span class="o">(</span><span class="n">rate</span><span class="o">.</span><span class="n">toDouble</span><span class="o">,</span> <span class="n">user</span><span class="o">.</span><span class="n">toInt</span><span class="o">,</span> <span class="n">item</span><span class="o">.</span><span class="n">toInt</span><span class="o">)})</span>
+<span class="k">val</span> <span class="n">model</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">MatrixFactorization</span><span class="o">()</span>
+  	<span class="o">.</span><span class="n">train</span><span class="o">(</span><span class="n">trainSet</span><span class="o">,</span> <span class="n">numIters</span><span class="o">,</span> <span class="n">numParts</span><span class="o">,</span> <span class="n">rank</span><span class="o">,</span> <span class="n">regParam_u</span><span class="o">,</span> <span class="n">regParam_v</span><span class="o">,</span><span class="n">stepsize</span><span class="o">)</span>
+</code></pre>
+    </div>
   </li>
 </ul>
 
@@ -270,7 +308,7 @@
 
 <h3 id="api"><a href="#api">API</a></h3>
 
-<p>Please click <a href="libble-spark/api/index.html">here</a> to check the Application Programming Interface documents.</p>
+<p>Please click <a href="api/">here</a> to check the Application Programming Interface documents.</p>
 
 </div>
 
