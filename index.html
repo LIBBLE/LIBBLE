@@ -121,7 +121,7 @@
 
 <p>LIBBLE is the abbreviation for “a LIBrary for Big LEarning”, which provides a toolbox for big data machine learning and data science. We are planning to implement LIBBLE on different distributed platforms, and the version implemented on <a href="http://spark.apache.org/">Spark</a> is called <a href="/LIBBLE-Spark">LIBBLE-Spark</a>.</p>
 
-<p>LIBBLE is developed by a team under the supervision of <a href="">Dr. Wu-Jun Li</a>, an Associate Professor at Nanjing University.</p>
+<p>LIBBLE is developed by a team under the supervision of <a href="http://cs.nju.edu.cn/lwj/">Dr. Wu-Jun Li</a>, an Associate Professor at Nanjing University.</p>
 
 <h3 id="empirical-comparison"><a href="#empirical-comparison">Empirical Comparison</a></h3>
 
@@ -143,7 +143,7 @@
   <li>
     <p>Speedup</p>
 
-    <p>The speedup is defined as follows: $speedup= \frac{{time with 16 cores}}{{time with 2x cores}}$. And we choose $x= 8, 16, 24, 32$. The speedup result is shown below, where we can find that SCOPE has a super-linear speedup, which might be reasonable due to the higher cache hit ratio with more machines. The good speedup of SCOPE can be explained by the fact that most training work can be locally completed by each Worker and SCOPE does not need much communication cost.</p>
+    <p>The speedup is defined as follows: <img src="http://latex.codecogs.com/gif.latex?speedup = \frac{(time\ with\ 16\ cores)} { (time\ with \ 2x\ cores)}" height="31"/>. And we choose <img src="http://latex.codecogs.com/gif.latex?x = 8, 16, 24, 32" />. The speedup result is shown below, where we can find that SCOPE has a super-linear speedup, which might be reasonable due to the higher cache hit ratio with more machines. The good speedup of SCOPE can be explained by the fact that most training work can be locally completed by each Worker and SCOPE does not need much communication cost.</p>
 
     <div align="center">
 
