@@ -330,14 +330,14 @@ ul.listing li.listing-item a {
   margin: 0 auto;
   max-width: -webkit-calc(50em - (1.5em * 2));
   max-width: calc(50em - (1.5em * 2));
-  min-width: -webkit-calc(20em - (1.5em * 2));
-  min-width: calc(20em - (1.5em * 2)); }
+  min-width: -webkit-calc(15em - (1.5em * 2));
+  min-width: calc(15em - (1.5em * 2)); }
   @media screen and (max-width: 55em) {
     .page {
       max-width: -webkit-calc(50em - (1.5em));
       max-width: calc(50em - (1.5em));
-      min-width: -webkit-calc(20em - (1.5em * 2));
-      min-width: calc(20em - (1.5em * 2)); } }
+      min-width: -webkit-calc(15em - (1.5em * 2));
+      min-width: calc(15em - (1.5em * 2)); } }
 
 .site-header:after, .site-footer:after, .post:after {
   content: "";
