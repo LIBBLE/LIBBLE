@@ -1,14 +1,18 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
-          <title>LinearRegression - libble.regression.LinearRegression</title>
-          <meta name="description" content="LinearRegression - libble.regression.LinearRegression" />
-          <meta name="keywords" content="LinearRegression libble.regression.LinearRegression" />
+          <title>LinearRegression - libble-spark_2.11 1.1.0 API - libble.regression.LinearRegression</title>
+          <meta name="description" content="LinearRegression - libble - spark 2.11 1.1.0 API - libble.regression.LinearRegression" />
+          <meta name="keywords" content="LinearRegression libble spark 2.11 1.1.0 API libble.regression.LinearRegression" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
       <script type="text/javascript">
          if(top === self) {
             var url = '../../index.html';
@@ -24,9 +28,15 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../lib/class_big.png" />
+        <img alt="Class" src="../../lib/class_big.png" />
         <p id="owner"><a href="../package.html" class="extype" name="libble">libble</a>.<a href="package.html" class="extype" name="libble.regression">regression</a></p>
-        <h1>LinearRegression</h1>
+        <h1>LinearRegression</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="libble.regression">package regression</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -35,14 +45,14 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">LinearRegression</span><span class="result"> extends <a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></span>
+        <span class="name">LinearRegression</span><span class="result"> extends <a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This is the model of LinearRegression with default regularization L1Reg.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a>, <span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="org.apache.spark.Logging">Logging</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a>, <span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -53,22 +63,21 @@
               <ol>
                 
                 <li class="alpha in"><span>Alphabetic</span></li>
-                <li class="inherit out"><span>By inheritance</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
               </ol>
             </div>
         <div id="ancestors">
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="libble.regression.LinearRegression"><span>LinearRegression</span></li><li class="in" name="libble.generalizedLinear.GeneralizedLinearModel"><span>GeneralizedLinearModel</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="org.apache.spark.Logging"><span>Logging</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="libble.regression.LinearRegression"><span>LinearRegression</span></li><li class="in" name="libble.generalizedLinear.LinearScope"><span>LinearScope</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
             <ol>
               <li class="hideall out"><span>Hide All</span></li>
-              <li class="showall in"><span>Show all</span></li>
+              <li class="showall in"><span>Show All</span></li>
             </ol>
-            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
           </div>
         <div id="visbl">
             <span class="filtertype">Visibility</span>
@@ -80,7 +89,24 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="libble.regression.LinearRegression#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+              <ol><li name="libble.regression.LinearRegression#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;():libble.regression.LinearRegression"></a>
+      <a id="&lt;init&gt;:LinearRegression"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">LinearRegression</span><span class="params">()</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@&lt;init&gt;():libble.regression.LinearRegression" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="libble.regression.LinearRegression#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="&lt;init&gt;(stepSize:Double,regParam:Double,factor:Double,iters:Int,partsNum:Int):libble.regression.LinearRegression"></a>
       <a id="&lt;init&gt;:LinearRegression"></a>
       <h4 class="signature">
@@ -91,9 +117,12 @@
       <span class="symbol">
         <span class="name">LinearRegression</span><span class="params">(<span name="stepSize">stepSize: <span class="extype" name="scala.Double">Double</span></span>, <span name="regParam">regParam: <span class="extype" name="scala.Double">Double</span></span>, <span name="factor">factor: <span class="extype" name="scala.Double">Double</span></span>, <span name="iters">iters: <span class="extype" name="scala.Int">Int</span></span>, <span name="partsNum">partsNum: <span class="extype" name="scala.Int">Int</span></span>)</span>
       </span>
-      </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">stepSize</dt><dd class="cmt"></dd><dt class="param">regParam</dt><dd class="cmt"></dd><dt class="param">factor</dt><dd class="cmt"></dd><dt class="param">iters</dt><dd class="cmt"></dd><dt class="param">partsNum</dt><dd class="cmt"><p>
-</p></dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@&lt;init&gt;(stepSize:Double,regParam:Double,factor:Double,iters:Int,partsNum:Int):libble.regression.LinearRegression" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li></ol>
             </div>
 
@@ -104,19 +133,6 @@
         <div id="values" class="values members">
               <h3>Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="!=(x$1:AnyRef):Boolean"></a>
-      <a id="!=(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
       <h4 class="signature">
@@ -127,8 +143,12 @@
       <span class="symbol">
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <a id="##():Int"></a>
@@ -140,22 +160,13 @@
       <span class="symbol">
         <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@##():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="==(x$1:AnyRef):Boolean"></a>
-      <a id="==(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
       <h4 class="signature">
@@ -166,8 +177,12 @@
       <span class="symbol">
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -179,10 +194,14 @@
       <span class="symbol">
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#clearThreshold" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="clearThreshold:GeneralizedLinearModel.this.type"></a>
+    </li><li name="libble.generalizedLinear.LinearScope#clearThreshold" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clearThreshold:LinearScope.this.type"></a>
       <a id="clearThreshold:LinearRegression.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -192,9 +211,12 @@
       <span class="symbol">
         <span class="name">clearThreshold</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
       </span>
-      </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>this.type
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@clearThreshold:LinearScope.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>this.type</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -206,7 +228,11 @@
       <span class="symbol">
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@clone():Object" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -225,7 +251,11 @@
       <span class="symbol">
         <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a>
@@ -238,8 +268,29 @@
       <span class="symbol">
         <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#factor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="factor:Double"></a>
+      <a id="factor:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">factor</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@factor:Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">the elastic param</p><div class="fullcomment"><div class="comment cmt"><p>the elastic param</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -251,7 +302,11 @@
       <span class="symbol">
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -270,7 +325,11 @@
       <span class="symbol">
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
@@ -283,8 +342,29 @@
       <span class="symbol">
         <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#isConvergenced" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isConvergenced(lastWeights:libble.linalg.Vector,thisWeights:libble.linalg.Vector):Boolean"></a>
+      <a id="isConvergenced(Vector,Vector):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isConvergenced</span><span class="params">(<span name="lastWeights">lastWeights: <a href="../linalg/Vector.html" class="extype" name="libble.linalg.Vector">Vector</a></span>, <span name="thisWeights">thisWeights: <a href="../linalg/Vector.html" class="extype" name="libble.linalg.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@isConvergenced(lastWeights:libble.linalg.Vector,thisWeights:libble.linalg.Vector):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Boolean</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -296,177 +376,29 @@
       <span class="symbol">
         <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#isTraceEnabled" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="isTraceEnabled():Boolean"></a>
-      <a id="isTraceEnabled():Boolean"></a>
+    </li><li name="libble.generalizedLinear.LinearScope#iters" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="iters:Int"></a>
+      <a id="iters:Int"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">def</span>
+        <span class="kind">var</span>
       </span>
       <span class="symbol">
-        <span class="name">isTraceEnabled</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">iters</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#log" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="log:org.slf4j.Logger"></a>
-      <a id="log:Logger"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">log</span><span class="result">: <span class="extype" name="org.slf4j.Logger">Logger</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logDebug" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logDebug(msg:&lt;?&gt;,throwable:&lt;?&gt;):Unit"></a>
-      <a id="logDebug(⇒String,Throwable):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logDebug</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logDebug" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logDebug(msg:&lt;?&gt;):Unit"></a>
-      <a id="logDebug(⇒String):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logDebug</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logError" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logError(msg:&lt;?&gt;,throwable:&lt;?&gt;):Unit"></a>
-      <a id="logError(⇒String,Throwable):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logError</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logError" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logError(msg:&lt;?&gt;):Unit"></a>
-      <a id="logError(⇒String):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logError</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logInfo" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logInfo(msg:=&gt;String,throwable:Throwable):Unit"></a>
-      <a id="logInfo(⇒String,Throwable):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logInfo</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logInfo" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logInfo(msg:=&gt;String):Unit"></a>
-      <a id="logInfo(⇒String):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logInfo</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logName" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logName:String"></a>
-      <a id="logName:String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logName</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logTrace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logTrace(msg:&lt;?&gt;,throwable:&lt;?&gt;):Unit"></a>
-      <a id="logTrace(⇒String,Throwable):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logTrace</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logTrace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logTrace(msg:&lt;?&gt;):Unit"></a>
-      <a id="logTrace(⇒String):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logTrace</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logWarning" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logWarning(msg:&lt;?&gt;,throwable:&lt;?&gt;):Unit"></a>
-      <a id="logWarning(⇒String,Throwable):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logWarning</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwable">throwable: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logWarning" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="logWarning(msg:&lt;?&gt;):Unit"></a>
-      <a id="logWarning(⇒String):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">logWarning</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@iters:Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">the number of outer loop</p><div class="fullcomment"><div class="comment cmt"><p>the number of outer loop</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -478,7 +410,11 @@
       <span class="symbol">
         <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
@@ -491,7 +427,11 @@
       <span class="symbol">
         <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@notify():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
@@ -504,9 +444,30 @@
       <span class="symbol">
         <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#predict" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="libble.generalizedLinear.LinearScope#partsNum" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="partsNum:Int"></a>
+      <a id="partsNum:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">partsNum</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@partsNum:Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">the number of partitions which correspond to the number of task.</p><div class="fullcomment"><div class="comment cmt"><p>the number of partitions which correspond to the number of task.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#predict" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="predict(input:org.apache.spark.rdd.RDD[libble.linalg.Vector]):org.apache.spark.rdd.RDD[Double]"></a>
       <a id="predict(RDD[Vector]):RDD[Double]"></a>
       <h4 class="signature">
@@ -517,10 +478,14 @@
       <span class="symbol">
         <span class="name">predict</span><span class="params">(<span name="input">input: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<a href="../linalg/Vector.html" class="extype" name="libble.linalg.Vector">Vector</a>]</span>)</span><span class="result">: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<span class="extype" name="scala.Double">Double</span>]</span>
       </span>
-      </h4>
-      <p class="shortcomment cmt">Predict on the data using the model.</p><div class="fullcomment"><div class="comment cmt"><p>Predict on the data using the model.</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>RDD[Double]
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#predict" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@predict(input:org.apache.spark.rdd.RDD[libble.linalg.Vector]):org.apache.spark.rdd.RDD[Double]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Predict on the data using the model.</p><div class="fullcomment"><div class="comment cmt"><p>Predict on the data using the model.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>RDD[Double]</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#predict" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="predict(v:libble.linalg.Vector):Double"></a>
       <a id="predict(Vector):Double"></a>
       <h4 class="signature">
@@ -531,11 +496,68 @@
       <span class="symbol">
         <span class="name">predict</span><span class="params">(<span name="v">v: <a href="../linalg/Vector.html" class="extype" name="libble.linalg.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
       </span>
-      </h4>
-      <p class="shortcomment cmt">Predict on the Vector using the model.</p><div class="fullcomment"><div class="comment cmt"><p>Predict on the Vector using the model.</p></div><dl class="paramcmts block"><dt class="param">v</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>Double
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#setClassNum" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="setClassNum(classNum:Int):GeneralizedLinearModel.this.type"></a>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@predict(v:libble.linalg.Vector):Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Predict on the Vector using the model.</p><div class="fullcomment"><div class="comment cmt"><p>Predict on the Vector using the model.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>Double</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#regParam" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="regParam:Double"></a>
+      <a id="regParam:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">regParam</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@regParam:Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">the regParam</p><div class="fullcomment"><div class="comment cmt"><p>the regParam</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#runEngine" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="runEngine(data:org.apache.spark.rdd.RDD[(Double,libble.linalg.Vector)],initialWeights:libble.linalg.Vector):Array[Double]"></a>
+      <a id="runEngine(RDD[(Double,Vector)],Vector):Array[Double]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runEngine</span><span class="params">(<span name="data">data: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[(<span class="extype" name="scala.Double">Double</span>, <a href="../linalg/Vector.html" class="extype" name="libble.linalg.Vector">Vector</a>)]</span>, <span name="initialWeights">initialWeights: <a href="../linalg/Vector.html" class="extype" name="libble.linalg.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Double">Double</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@runEngine(data:org.apache.spark.rdd.RDD[(Double,libble.linalg.Vector)],initialWeights:libble.linalg.Vector):Array[Double]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Optimization engine.</p><div class="fullcomment"><div class="comment cmt"><p>Optimization engine.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>lossArray</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#setBias" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setBias(value:Boolean):LinearScope.this.type"></a>
+      <a id="setBias(Boolean):LinearRegression.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setBias</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@setBias(value:Boolean):LinearScope.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Set add Bias or not.</p><div class="fullcomment"><div class="comment cmt"><p>Set add Bias or not.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>this.type</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#setClassNum" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setClassNum(classNum:Int):LinearScope.this.type"></a>
       <a id="setClassNum(Int):LinearRegression.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -545,13 +567,16 @@
       <span class="symbol">
         <span class="name">setClassNum</span><span class="params">(<span name="classNum">classNum: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@setClassNum(classNum:Int):LinearScope.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Set the classNum
 </p><div class="fullcomment"><div class="comment cmt"><p>Set the classNum
-</p></div><dl class="paramcmts block"><dt class="param">classNum</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>this
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#setFactor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="setFactor(value:Double):GeneralizedLinearModel.this.type"></a>
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>this</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#setFactor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setFactor(value:Double):LinearScope.this.type"></a>
       <a id="setFactor(Double):LinearRegression.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -561,13 +586,16 @@
       <span class="symbol">
         <span class="name">setFactor</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@setFactor(value:Double):LinearScope.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Set the factor
 </p><div class="fullcomment"><div class="comment cmt"><p>Set the factor
-</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>this
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#setIters" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="setIters(value:Int):GeneralizedLinearModel.this.type"></a>
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>this</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#setIters" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setIters(value:Int):LinearScope.this.type"></a>
       <a id="setIters(Int):LinearRegression.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -577,13 +605,16 @@
       <span class="symbol">
         <span class="name">setIters</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@setIters(value:Int):LinearScope.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Set the iterations
 </p><div class="fullcomment"><div class="comment cmt"><p>Set the iterations
-</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>this
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#setLossFunc" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="setLossFunc(loss:libble.generalizedLinear.LossFunc):GeneralizedLinearModel.this.type"></a>
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>this</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#setLossFunc" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setLossFunc(loss:libble.generalizedLinear.LossFunc):LinearScope.this.type"></a>
       <a id="setLossFunc(LossFunc):LinearRegression.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -593,13 +624,16 @@
       <span class="symbol">
         <span class="name">setLossFunc</span><span class="params">(<span name="loss">loss: <a href="../generalizedLinear/LossFunc.html" class="extype" name="libble.generalizedLinear.LossFunc">LossFunc</a></span>)</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@setLossFunc(loss:libble.generalizedLinear.LossFunc):LinearScope.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Set the lossfunc
 </p><div class="fullcomment"><div class="comment cmt"><p>Set the lossfunc
-</p></div><dl class="paramcmts block"><dt class="param">loss</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>this
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#setParts" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="setParts(value:Int):GeneralizedLinearModel.this.type"></a>
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>this</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#setParts" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setParts(value:Int):LinearScope.this.type"></a>
       <a id="setParts(Int):LinearRegression.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -609,13 +643,16 @@
       <span class="symbol">
         <span class="name">setParts</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@setParts(value:Int):LinearScope.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Set the data's Parts
 </p><div class="fullcomment"><div class="comment cmt"><p>Set the data's Parts
-</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>this
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#setRegParam" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="setRegParam(value:Double):GeneralizedLinearModel.this.type"></a>
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>this</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#setRegParam" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setRegParam(value:Double):LinearScope.this.type"></a>
       <a id="setRegParam(Double):LinearRegression.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -625,29 +662,16 @@
       <span class="symbol">
         <span class="name">setRegParam</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@setRegParam(value:Double):LinearScope.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Set the RegParam
 </p><div class="fullcomment"><div class="comment cmt"><p>Set the RegParam
-</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>this
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#setRegularizer" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="setRegularizer(reg:libble.generalizedLinear.Regularizer):GeneralizedLinearModel.this.type"></a>
-      <a id="setRegularizer(Regularizer):LinearRegression.this.type"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">setRegularizer</span><span class="params">(<span name="reg">reg: <a href="../generalizedLinear/Regularizer.html" class="extype" name="libble.generalizedLinear.Regularizer">Regularizer</a></span>)</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Set the Regularizer
-</p><div class="fullcomment"><div class="comment cmt"><p>Set the Regularizer
-</p></div><dl class="paramcmts block"><dt class="param">reg</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>this
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#setStepSize_" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="setStepSize_(value:Double):GeneralizedLinearModel.this.type"></a>
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>this</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#setStepSize_" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setStepSize_(value:Double):LinearScope.this.type"></a>
       <a id="setStepSize_(Double):LinearRegression.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -657,13 +681,16 @@
       <span class="symbol">
         <span class="name">setStepSize_</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@setStepSize_(value:Double):LinearScope.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Set the stepSize
 </p><div class="fullcomment"><div class="comment cmt"><p>Set the stepSize
-</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>this
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#setStopBound" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="setStopBound(value:Double):GeneralizedLinearModel.this.type"></a>
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>this</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#setStopBound" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setStopBound(value:Double):LinearScope.this.type"></a>
       <a id="setStopBound(Double):LinearRegression.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -673,12 +700,15 @@
       <span class="symbol">
         <span class="name">setStopBound</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@setStopBound(value:Double):LinearScope.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Set the stop bound.</p><div class="fullcomment"><div class="comment cmt"><p>Set the stop bound.
-</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#setThreshold" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="setThreshold(value:Double):GeneralizedLinearModel.this.type"></a>
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#setThreshold" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setThreshold(value:Double):LinearScope.this.type"></a>
       <a id="setThreshold(Double):LinearRegression.this.type"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -688,9 +718,48 @@
       <span class="symbol">
         <span class="name">setThreshold</span><span class="params">(<span name="value">value: <span class="extype" name="scala.Double">Double</span></span>)</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
       </span>
-      </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>this.type
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@setThreshold(value:Double):LinearScope.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>this.type</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#setUpdater" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setUpdater(up:libble.generalizedLinear.Updater):LinearScope.this.type"></a>
+      <a id="setUpdater(Updater):LinearRegression.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setUpdater</span><span class="params">(<span name="up">up: <a href="../generalizedLinear/Updater.html" class="extype" name="libble.generalizedLinear.Updater">Updater</a></span>)</span><span class="result">: <a href="" class="extype" name="libble.regression.LinearRegression">LinearRegression</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@setUpdater(up:libble.generalizedLinear.Updater):LinearScope.this.type" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Set the Regularizer
+</p><div class="fullcomment"><div class="comment cmt"><p>Set the Regularizer
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>this</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#stepSize" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="stepSize:Double"></a>
+      <a id="stepSize:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">var</span>
+      </span>
+      <span class="symbol">
+        <span class="name">stepSize</span><span class="result">: <span class="extype" name="scala.Double">Double</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@stepSize:Double" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">the learning rate.</p><div class="fullcomment"><div class="comment cmt"><p>the learning rate.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -702,9 +771,13 @@
       <span class="symbol">
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#threshold" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="libble.generalizedLinear.LinearScope#threshold" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="threshold:Option[Double]"></a>
       <a id="threshold:Option[Double]"></a>
       <h4 class="signature">
@@ -715,8 +788,12 @@
       <span class="symbol">
         <span class="name">threshold</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Double">Double</span>]</span>
       </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@threshold:Option[Double]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <a id="toString():String"></a>
@@ -728,9 +805,13 @@
       <span class="symbol">
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@toString():String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#train" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="libble.generalizedLinear.LinearScope#train" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="train(trainingData:org.apache.spark.rdd.RDD[libble.context.Instance],initialWeights:libble.linalg.Vector):Array[Double]"></a>
       <a id="train(RDD[Instance],Vector):Array[Double]"></a>
       <h4 class="signature">
@@ -741,11 +822,14 @@
       <span class="symbol">
         <span class="name">train</span><span class="params">(<span name="trainingData">trainingData: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<a href="../context/Instance.html" class="extype" name="libble.context.Instance">Instance</a>]</span>, <span name="initialWeights">initialWeights: <a href="../linalg/Vector.html" class="extype" name="libble.linalg.Vector">Vector</a></span>)</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Double">Double</span>]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@train(trainingData:org.apache.spark.rdd.RDD[libble.context.Instance],initialWeights:libble.linalg.Vector):Array[Double]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Training on training data with initial weights.</p><div class="fullcomment"><div class="comment cmt"><p>Training on training data with initial weights.
-</p></div><dl class="paramcmts block"><dt class="param">trainingData</dt><dd class="cmt"></dd><dt class="param">initialWeights</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>lossArray
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
-    </li><li name="libble.generalizedLinear.GeneralizedLinearModel#train" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>lossArray</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
+    </li><li name="libble.generalizedLinear.LinearScope#train" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="train(trainingData:org.apache.spark.rdd.RDD[libble.context.Instance]):Array[Double]"></a>
       <a id="train(RDD[Instance]):Array[Double]"></a>
       <h4 class="signature">
@@ -756,10 +840,13 @@
       <span class="symbol">
         <span class="name">train</span><span class="params">(<span name="trainingData">trainingData: <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<a href="../context/Instance.html" class="extype" name="libble.context.Instance">Instance</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Double">Double</span>]</span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@train(trainingData:org.apache.spark.rdd.RDD[libble.context.Instance]):Array[Double]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <p class="shortcomment cmt">Training the model on training data.</p><div class="fullcomment"><div class="comment cmt"><p>Training the model on training data.
-</p></div><dl class="paramcmts block"><dt class="param">trainingData</dt><dd class="cmt"></dd><dt>returns</dt><dd class="cmt"><p>lossArray
-</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>lossArray</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -771,7 +858,11 @@
       <span class="symbol">
         <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@wait():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -790,7 +881,11 @@
       <span class="symbol">
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -809,7 +904,11 @@
       <span class="symbol">
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
-      </h4>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.regression.LinearRegression@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">(<span>
       
@@ -826,14 +925,12 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="libble.generalizedLinear.GeneralizedLinearModel">
-              <h3>Inherited from <a href="../generalizedLinear/GeneralizedLinearModel.html" class="extype" name="libble.generalizedLinear.GeneralizedLinearModel">GeneralizedLinearModel</a></h3>
+        <div class="parent" name="libble.generalizedLinear.LinearScope">
+              <h3>Inherited from <a href="../generalizedLinear/LinearScope.html" class="extype" name="libble.generalizedLinear.LinearScope">LinearScope</a></h3>
             </div><div class="parent" name="scala.Serializable">
               <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
             </div><div class="parent" name="java.io.Serializable">
               <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
-            </div><div class="parent" name="org.apache.spark.Logging">
-              <h3>Inherited from <span class="extype" name="org.apache.spark.Logging">Logging</span></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
@@ -854,6 +951,7 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../lib/template.js"></script>
+
+
     </body>
       </html>

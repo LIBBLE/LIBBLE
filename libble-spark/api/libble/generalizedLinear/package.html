@@ -1,14 +1,18 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
-          <title>generalizedLinear - libble.generalizedLinear</title>
-          <meta name="description" content="generalizedLinear - libble.generalizedLinear" />
-          <meta name="keywords" content="generalizedLinear libble.generalizedLinear" />
+          <title>generalizedLinear - libble-spark_2.11 1.1.0 API - libble.generalizedLinear</title>
+          <meta name="description" content="generalizedLinear - libble - spark 2.11 1.1.0 API - libble.generalizedLinear" />
+          <meta name="keywords" content="generalizedLinear libble spark 2.11 1.1.0 API libble.generalizedLinear" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
       <script type="text/javascript">
          if(top === self) {
             var url = '../../index.html';
@@ -24,9 +28,13 @@
         </head>
         <body class="value">
       <div id="definition">
-        <img src="../../lib/package_big.png" />
+        <img alt="Package" src="../../lib/package_big.png" />
         <p id="owner"><a href="../package.html" class="extype" name="libble">libble</a></p>
-        <h1>generalizedLinear</h1>
+        <h1>generalizedLinear</h1><span class="permalink">
+      <a href="../../index.html#libble.generalizedLinear.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -58,20 +66,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="libble.generalizedLinear.GeneralizedLinearModel" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="GeneralizedLinearModelextendsLoggingwithSerializable"></a>
-      <a id="GeneralizedLinearModel:GeneralizedLinearModel"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="GeneralizedLinearModel.html"><span class="name">GeneralizedLinearModel</span></a><span class="result"> extends <span class="extype" name="org.apache.spark.Logging">Logging</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
-      </span>
-      </h4>
-      <p class="comment cmt">This class is the model of Generalized Linear Algorithms with default lossfunc LogisticLoss and default regularization L2Reg.</p>
-    </li><li name="libble.generalizedLinear.HingeLoss" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="libble.generalizedLinear.HingeLoss" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="HingeLossextendsLossFunc"></a>
       <a id="HingeLoss:HingeLoss"></a>
       <h4 class="signature">
@@ -82,35 +77,47 @@
       <span class="symbol">
         <a href="HingeLoss.html"><span class="name">HingeLoss</span></a><span class="result"> extends <a href="LossFunc.html" class="extype" name="libble.generalizedLinear.LossFunc">LossFunc</a></span>
       </span>
-      </h4>
-      <p class="comment cmt">Here we defined the hinge Loss
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.generalizedLinear.package@HingeLossextendsLossFunc" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Here we defined the hinge Loss
 </p>
-    </li><li name="libble.generalizedLinear.L1Reg" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="L1RegextendsRegularizer"></a>
-      <a id="L1Reg:L1Reg"></a>
+    </li><li name="libble.generalizedLinear.L1Updater" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="L1UpdaterextendsUpdater"></a>
+      <a id="L1Updater:L1Updater"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="L1Reg.html"><span class="name">L1Reg</span></a><span class="result"> extends <a href="Regularizer.html" class="extype" name="libble.generalizedLinear.Regularizer">Regularizer</a></span>
+        <a href="L1Updater.html"><span class="name">L1Updater</span></a><span class="result"> extends <a href="Updater.html" class="extype" name="libble.generalizedLinear.Updater">Updater</a></span>
       </span>
-      </h4>
-      <p class="comment cmt"></p>
-    </li><li name="libble.generalizedLinear.L2Reg" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="L2RegextendsRegularizer"></a>
-      <a id="L2Reg:L2Reg"></a>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.generalizedLinear.package@L1UpdaterextendsUpdater" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="libble.generalizedLinear.L2Updater" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="L2UpdaterextendsUpdater"></a>
+      <a id="L2Updater:L2Updater"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="L2Reg.html"><span class="name">L2Reg</span></a><span class="result"> extends <a href="Regularizer.html" class="extype" name="libble.generalizedLinear.Regularizer">Regularizer</a></span>
+        <a href="L2Updater.html"><span class="name">L2Updater</span></a><span class="result"> extends <a href="Updater.html" class="extype" name="libble.generalizedLinear.Updater">Updater</a></span>
       </span>
-      </h4>
-      <p class="comment cmt"></p>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.generalizedLinear.package@L2UpdaterextendsUpdater" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
     </li><li name="libble.generalizedLinear.LeastSquareLoss" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="LeastSquareLossextendsLossFunc"></a>
       <a id="LeastSquareLoss:LeastSquareLoss"></a>
@@ -122,8 +129,29 @@
       <span class="symbol">
         <a href="LeastSquareLoss.html"><span class="name">LeastSquareLoss</span></a><span class="result"> extends <a href="LossFunc.html" class="extype" name="libble.generalizedLinear.LossFunc">LossFunc</a></span>
       </span>
-      </h4>
-      <p class="comment cmt">Here we defined the least square Loss.</p>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.generalizedLinear.package@LeastSquareLossextendsLossFunc" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Here we defined the least square Loss.</p>
+    </li><li name="libble.generalizedLinear.LinearScope" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="LinearScopeextendsSerializable"></a>
+      <a id="LinearScope:LinearScope"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LinearScope.html"><span class="name">LinearScope</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.generalizedLinear.package@LinearScopeextendsSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class is the model of Generalized Linear Algorithms with default lossfunc LogisticLoss and default regularization L2Reg.</p>
     </li><li name="libble.generalizedLinear.LogisticLoss" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="LogisticLossextendsLossFunc"></a>
       <a id="LogisticLoss:LogisticLoss"></a>
@@ -135,9 +163,13 @@
       <span class="symbol">
         <a href="LogisticLoss.html"><span class="name">LogisticLoss</span></a><span class="result"> extends <a href="LossFunc.html" class="extype" name="libble.generalizedLinear.LossFunc">LossFunc</a></span>
       </span>
-      </h4>
-      <p class="comment cmt">Here we defined the logistic Loss.</p>
-    </li><li name="libble.generalizedLinear.LossFunc" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.generalizedLinear.package@LogisticLossextendsLossFunc" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Here we defined the logistic Loss.</p>
+    </li><li name="libble.generalizedLinear.LossFunc" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="LossFuncextendsSerializable"></a>
       <a id="LossFunc:LossFunc"></a>
       <h4 class="signature">
@@ -148,34 +180,67 @@
       <span class="symbol">
         <a href="LossFunc.html"><span class="name">LossFunc</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">In this class, you should give your own gradient of function.</p>
-    </li><li name="libble.generalizedLinear.Regularizer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="RegularizerextendsSerializable"></a>
-      <a id="Regularizer:Regularizer"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="Regularizer.html"><span class="name">Regularizer</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
-      </span>
-      </h4>
-      <p class="comment cmt"></p>
-    </li><li name="libble.generalizedLinear.withoutReg" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="withoutRegextendsRegularizer"></a>
-      <a id="withoutReg:withoutReg"></a>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.generalizedLinear.package@LossFuncextendsSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">In this class, you should give your own gradient of function.</p><div class="fullcomment"><div class="comment cmt"><p>In this class, you should give your own gradient of function.
+We give some instances of different losses.
+If you want to run optimization on your own function, you should extend
+this class, and override functions.
+</p></div></div>
+    </li><li name="libble.generalizedLinear.SimpleUpdater" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SimpleUpdaterextendsUpdater"></a>
+      <a id="SimpleUpdater:SimpleUpdater"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="withoutReg.html"><span class="name">withoutReg</span></a><span class="result"> extends <a href="Regularizer.html" class="extype" name="libble.generalizedLinear.Regularizer">Regularizer</a></span>
+        <a href="SimpleUpdater.html"><span class="name">SimpleUpdater</span></a><span class="result"> extends <a href="Updater.html" class="extype" name="libble.generalizedLinear.Updater">Updater</a></span>
       </span>
-      </h4>
-      <p class="comment cmt"></p>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.generalizedLinear.package@SimpleUpdaterextendsUpdater" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="libble.generalizedLinear.Updater" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="UpdaterextendsSerializable"></a>
+      <a id="Updater:Updater"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Updater.html"><span class="name">Updater</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.generalizedLinear.package@UpdaterextendsSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"></p>
+    </li><li name="libble.generalizedLinear.WeightsVector" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WeightsVectorextendsAnyRef"></a>
+      <a id="WeightsVector:WeightsVector"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="WeightsVector.html"><span class="name">WeightsVector</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.generalizedLinear.package@WeightsVectorextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li></ol>
             </div>
 
@@ -205,6 +270,7 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../lib/template.js"></script>
+
+
     </body>
       </html>

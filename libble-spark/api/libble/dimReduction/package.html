@@ -1,14 +1,18 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html >
 <html>
         <head>
-          <title>dimReduction - libble.dimReduction</title>
-          <meta name="description" content="dimReduction - libble.dimReduction" />
-          <meta name="keywords" content="dimReduction libble.dimReduction" />
+          <title>dimReduction - libble-spark_2.11 1.1.0 API - libble.dimReduction</title>
+          <meta name="description" content="dimReduction - libble - spark 2.11 1.1.0 API - libble.dimReduction" />
+          <meta name="keywords" content="dimReduction libble spark 2.11 1.1.0 API libble.dimReduction" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
       <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
       <script type="text/javascript">
          if(top === self) {
             var url = '../../index.html';
@@ -24,9 +28,13 @@
         </head>
         <body class="value">
       <div id="definition">
-        <img src="../../lib/package_big.png" />
+        <img alt="Package" src="../../lib/package_big.png" />
         <p id="owner"><a href="../package.html" class="extype" name="libble">libble</a></p>
-        <h1>dimReduction</h1>
+        <h1>dimReduction</h1><span class="permalink">
+      <a href="../../index.html#libble.dimReduction.package" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
       </div>
 
       <h4 id="signature" class="signature">
@@ -59,7 +67,7 @@
         <div id="types" class="types members">
               <h3>Type Members</h3>
               <ol><li name="libble.dimReduction.GLS_Matrix_Batch" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="GLS_Matrix_BatchextendsLoggingwithSerializable"></a>
+      <a id="GLS_Matrix_BatchextendsSerializable"></a>
       <a id="GLS_Matrix_Batch:GLS_Matrix_Batch"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -67,12 +75,16 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="GLS_Matrix_Batch.html"><span class="name">GLS_Matrix_Batch</span></a><span class="result"> extends <span class="extype" name="org.apache.spark.Logging">Logging</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="GLS_Matrix_Batch.html"><span class="name">GLS_Matrix_Batch</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">This class is the Generalized Linear Algorithms for PCA model which uses mini-batch strategy during optimization process.</p>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.dimReduction.package@GLS_Matrix_BatchextendsSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class is the Generalized Linear Algorithms for PCA model which uses mini-batch strategy during optimization process.</p>
     </li><li name="libble.dimReduction.PCA" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="PCAextendsLoggingwithSerializable"></a>
+      <a id="PCAextendsSerializable"></a>
       <a id="PCA:PCA"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -80,10 +92,32 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="PCA.html"><span class="name">PCA</span></a><span class="result"> extends <span class="extype" name="org.apache.spark.Logging">Logging</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="PCA.html"><span class="name">PCA</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
-      </h4>
-      <p class="comment cmt">This class is the model of PCA.</p>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.dimReduction.package@PCAextendsSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This class is the model of PCA.</p>
+    </li><li name="libble.dimReduction.SVD" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SVDextendsSerializable"></a>
+      <a id="SVD:SVD"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SVD.html"><span class="name">SVD</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#libble.dimReduction.package@SVDextendsSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">This is the model of SVD
+</p>
     </li></ol>
             </div>
 
@@ -113,6 +147,7 @@
       <div id="tooltip"></div>
 
       <div id="footer">  </div>
-      <script defer="defer" type="text/javascript" id="jquery-js" src="../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../lib/template.js"></script>
+
+
     </body>
       </html>
