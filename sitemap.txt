@@ -1,13 +1,13 @@
 
-http://localhost:4000/LIBBLE-docs/cv/
-http://localhost:4000/LIBBLE-docs/downloads/
-http://localhost:4000/LIBBLE-docs/feed.xml
-http://localhost:4000/LIBBLE-docs/
-http://localhost:4000/LIBBLE-docs/libble-spark/
-http://localhost:4000/LIBBLE-docs/css/main.css
-http://localhost:4000/LIBBLE-docs/news/
-http://localhost:4000/LIBBLE-docs/publications/
-http://localhost:4000/LIBBLE-docs/sitemap.txt
+http://localhost:4000/cv/
+http://localhost:4000/downloads/
+http://localhost:4000/feed.xml
+http://localhost:4000/
+http://localhost:4000/libble-spark/
+http://localhost:4000/css/main.css
+http://localhost:4000/news/
+http://localhost:4000/publications/
+http://localhost:4000/sitemap.txt
 
-http://localhost:4000/LIBBLE-docs/blog/2016/11/09/LIBBLE-Spark-1.0.1-update
-http://localhost:4000/LIBBLE-docs/blog/2016/06/03/LIBBLE-Spark-Online
+http://localhost:4000/blog/2016/11/09/LIBBLE-Spark-1.0.1-update
+http://localhost:4000/blog/2016/06/03/LIBBLE-Spark-Online
