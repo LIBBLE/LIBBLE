@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>LIBBLE :: LIBBLE-Spark Online</title>
-    <meta name="description" content="LIBBLE-Spark online">
+    <title>LIBBLE</title>
+    <meta name="description" content="A Library for Big Learning">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="https://libble.github.io/blog/2016/06/03/LIBBLE-Spark-Online">
+    <link rel="canonical" href="https://libble.github.io/libble-ps/">
     <link rel="alternate" type="application/rss+xml" title="LIBBLE" href="https://libble.github.io/feed.xml" />
 	<link type="image/x-icon" rel="shortcut icon" href="/images/icon.png" />
     <!-- <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>-->
@@ -171,26 +171,59 @@
 
     <div class="post">
     <header class="post-header">
-    <h1>LIBBLE-Spark Online</h1>
-    <p class="post-meta">Posted on June 3, 2016  (Nanjing University)</p>
-
-    
-
-    
-    <p class="post-meta">Categories:
-    
-    
-    online&nbsp;
-    
-
-    </p>
-    
+        <h1></h1>
     </header>
 
-    <p>LIBBLE-Spark online</p>
+    <h2 id="libble-ps">LIBBLE-PS</h2>
+
+<h3 id="introduction"><a href="#introduction">Introduction</a></h3>
+
+<p>LIBBLE-PS is part of the Project LIBBLE. The current version of LIBBLE-PS includes the following machine learning algorithms:</p>
+
+<blockquote>
+  <ul>
+    <li>Classification
+      <ul>
+        <li>Logistic Regression (LR)</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<p>LIBBLE-PS uses SCOPE algorithm on Parameter Server framework. It uses multi Servers and Workers to accelerate. We choose logistic regression (LR) with a L2-norm regularization term to evaluate LIBBLE-PS and other methods. The result on webspam dataset is shown below. All the methods use 16 Workers.</p>
+
+<div align="center">
 
 
-    
+  <img src="https://libble.github.io/images/web.png" width="500px" text-align="center" />
+
+  </div>
+
+<h3 id="how-to-use"><a href="#How to use">How to use</a></h3>
+
+<p>We provide partitiondata.sh to help partition and distributedly store data. The usage method is:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="p">.</span><span class="nf">/</span><span class="n">partitiondata</span><span class="p">.</span><span class="nf">sh</span> <span class="p">[</span><span class="n">data</span> <span class="n">file</span><span class="p">]</span> <span class="p">[</span><span class="n">number</span><span class="p">]</span> <span class="p">[</span><span class="n">host</span> <span class="n">file</span><span class="p">]</span>
+  </code></pre></figure>
+
+<p>LIBBLE-PS uses MPI to communicate. The cluster must deploy MPI. Download LIBBLE-PS and then:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="n">cd</span> <span class="n">app</span><span class="o">/*</span> <span class="o">&amp;&amp;</span> <span class="n">make</span>
+  </code></pre></figure>
+
+<p>Run LIBBLE-PS by using Python:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="no">Python</span> <span class="o">*</span><span class="p">.</span><span class="nf">py</span>
+  </code></pre></figure>
+
+<p>Use the python file (*.py) to edit algorithm Configuration.</p>
+
+<h3 id="open-source"><a href="#open-source">Open Source</a></h3>
+
+<ul>
+  <li>GitHub URL: <a href="https://github.com/LIBBLE/LIBBLE-PS/">https://github.com/LIBBLE/LIBBLE-PS/</a></li>
+  <li>Licence: This project follows <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache Licence 2.0</a></li>
+</ul>
 
 </div>
 
