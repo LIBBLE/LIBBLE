@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LIBBLE</title>
+    <meta name="description" content="A Library for Big Learning">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://localhost:5001/libble-multithread/">
+    <link rel="alternate" type="application/rss+xml" title="LIBBLE" href="http://localhost:5001/feed.xml" />
+	<link type="image/x-icon" rel="shortcut icon" href="/images/icon.png" />
+    <!-- <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>-->
+	<!-- mathjax config similar to math.stackexchange -->
+<style>
+	/* cyrillic-ext */
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: local('EB Garamond'), local('EBGaramond'), url(https://fonts.gstatic.com/s/ebgaramond/v7/kYZt1bJ8UsGAPRGnkXPeFTTOQ_MqJVwkKsUn0wKzc2I.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: local('EB Garamond'), local('EBGaramond'), url(https://fonts.gstatic.com/s/ebgaramond/v7/kYZt1bJ8UsGAPRGnkXPeFTUj_cnvWIuuBMVgbX098Mw.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: local('EB Garamond'), local('EBGaramond'), url(https://fonts.gstatic.com/s/ebgaramond/v7/kYZt1bJ8UsGAPRGnkXPeFb6up8jxqWt8HVA3mDhkV_0.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: local('EB Garamond'), local('EBGaramond'), url(https://fonts.gstatic.com/s/ebgaramond/v7/kYZt1bJ8UsGAPRGnkXPeFSYE0-AqJ3nfInTTiDXDjU4.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  src: local('EB Garamond'), local('EBGaramond'), url(https://fonts.gstatic.com/s/ebgaramond/v7/kYZt1bJ8UsGAPRGnkXPeFY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+</style>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+
+
+  <body>
+  <div class="page">
+    <header class="site-header">
+    <a class="site-title" href="/">LIBBLE</a>
+	<a class="site-description"> A Library for Big Learning</a>
+    <nav class="site-nav">
+        <a href="#" class="menu-icon menu.open">
+            <svg viewBox="0 0 18 15">
+                <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </a>
+        <div class="trigger"><h1>Main Navigation</h1>
+            <ul class="menu">
+    
+    
+     <li><a href="/" class="page-link">HOME</a>
+    
+    </li>
+    
+    
+    <li><a href="/libble-spark/" class="page-link">LIBBLE-Spark</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/libble-spark/#introduction">Introduction</a></li>
+    
+    <li><a href="/libble-spark/#tutorial">Tutorial</a></li>
+    
+    <li><a href="/libble-spark/#open-source">Open Source</a></li>
+    
+    <li><a href="/libble-spark/#api">API</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    
+     <li><a href="/publications/" class="page-link">Publications</a>
+    
+    </li>
+    
+    
+    <li><a href="/downloads/" class="page-link">Downloads</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/downloads/#libble-spark">LIBBLE-Spark</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    
+     <li><a href="/news/" class="page-link">News</a>
+    
+    </li>
+    
+</ul>
+
+        </div>
+    </nav>
+</header>
+
+
+    <div class="post">
+    <header class="post-header">
+        <h1></h1>
+    </header>
+
+    <h2 id="paragraphe">ParaGraphE</h2>
+
+<p>ParaGraphE provides a library for parallel knowledge graph embedding, which implements several knowledge graph embedding methods on a single machine with multiple cores and a shared memory. The
+implemented methods in the current version include TransE[1], TransH[2], TransR[3], TransD[4], and SphereE (the sphere method in ManifoldE)[5].</p>
+
+<p>ParaGraphE aims at accelerating the speed of training and testing of knowledge graph embedding methods. We re-implement these methods in a multi-thread way, which achieves a significant time reduction without influencing the accuracy. The parallel optimization/learning algorithms of ParaGraphE are based on the lock-free strategies in [6,7].</p>
+
+<p>More details about ParaGraphR can be found at the arXiv draft[8].</p>
+
+<h3 id="compilation"><a href="#compilation">Compilation</a></h3>
+
+<p>We include the Makefile in this folder, just type “make” in command line to compile the code.</p>
+
+<h3 id="train"><a href="train">Train</a></h3>
+
+<p>To start training, you can input a command like this:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>./train -nthreads 10 -method TransE -path data/WN18 -dim 50 -margin 4 -nepoches 1000 -nbatches 1 -use_tmp 0 
+</code></pre>
+</div>
+
+<p>Several parameters can be set by the command line. They are:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-nthreads : The number of threads for executing. (default: 10)
+
+-path: The path of data. (default: data/FB15k)
+
+-method	: The method of embedding. Choice: TransE, TransH, TransR, TransD, SphereE. (default: TransE)
+-nepoches : The number of epoches for training. (default: 1000)
+
+-dim : The dimension of embeddings. (default: 50)
+
+-rate : Learning rate. (default: 0.01)
+
+-margin: The margin parameter in rank-based hinge loss. (default: 1)
+
+-l1\_norm : Use L1 norm in training. Choice: 0:L2\_norm, 1:L1\_norm. (default: 1)
+
+-corr_method : Use "unif" or "bern" for sampling corrupted triples. Choice: 0:unif, 1:bern. (default: 0)
+
+-nbatches: The number of batches in an epoch. Need to cooperate with "-use_tmp 1" to employ minibatch training. According to our experience, it's performance is usually not good due to asynchronous update in	multi-thread setting. So minibatch is not recommended. (default: 1)
+
+-use_tmp : Whether to update parameters after a batch. (default: 0)
+
+-init_from_file : Whether to init parameters from TransE result. TransH, TransR, TransD can have a perfermance boost initialized from TransE result. ***Make sure you have already run TransE on this dataset once and have saved the result in that data path before you use this command.*** (default: 0)
+
+-orth_value (only in TransH) : The orthogonal parameter \episilon in TransH. (default: 0.1)
+
+-dim2 (only in TransR) : The dimension of relational space in TransR. (default: equal to -dim)
+</code></pre>
+</div>
+
+<p>After training with a notice “the embeddings have already been saved in files.”, embeddings are saved in the same data path of that dataset. For example, after you run TransE on data/WN18, you can find two files named “TransE_entity_vec.txt” and “TransE_relation_vec.txt” in that path. Those files can be read by the testing program during the testing procedure.</p>
+
+<h3 id="test"><a href="#test">Test</a></h3>
+
+<p>After you have saved embeddings in files, you can start testing with a command like this:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>./test -nthreads 10 -method TransE -path data/WN18 -l1_norm 1
+</code></pre>
+</div>
+
+<p>Several parameters can be set by the command line. They are:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-nthreads : The number of threads for executing. (default: 10)
+
+-path: The path of data. (default: data/FB15k)
+
+-method	: The method of embedding. Choice: TransE, TransH, TransR, TransD, SphereE. (default: TransE)
+
+-l1\_norm : Use L1 norm in testing. Choice: 0:L2\_norm, 1:L1_norm. (default: 1)
+</code></pre>
+</div>
+
+<p>The program will report the result in several popular metrics of knowledge graph embedding. They are:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mr : The value of mean rank.
+
+mrr : The value of mean reciprocal rank.
+
+hits@10 : The proportion of ranks no larger than 10.
+
+hits@1 : The porportion of ranks list at first.
+</code></pre>
+</div>
+
+<p>In the output, those metrics with a “f_” mark before them are the results in “filter” settings. And those without “f_” are the results in “raw” settings.</p>
+
+<h3 id="implementing-customized-method"><a href="#method">Implementing customized method</a></h3>
+
+<p>You can easily implement your own method based on our framework. Simply write a class by inheriting the class transbase, and then implement a construction function and the following pure virtual functions in transbase:</p>
+
+<p>void initial() : How to initialize parameters.
+double triple_loss(int h, int r, int t) : Calculating the loss of triple &lt;h,r,t&gt;.
+void gradient(int r, int h, int t, int h_, int t_) : Doing gradient descent based on gold triple &lt;h,r,t&gt; and corrupted triple &lt;h_, r, t_&gt;.
+void save_to_file(string data_path) : Save embeddings into files.
+void read_from_file(string data_path) : Read embeddings from files when testing.
+void batch_update() : Useful in use_tmp = 1. Update the parameters.</p>
+
+<p>Then add one or two lines of code in train.cpp and test.cpp by following similar ways in our implemented methods. 
+Modify Makefile and re-compile the program, then your method is ready to run.</p>
+
+<h3 id="reference"><a href="#Reference">Reference</a></h3>
+
+<p>[1] Antoine Bordes, Nicolas Usunier, Alberto Garcia-Duran, Jason Weston, Oksana Yakhnenko. Translating Embeddings for Modeling Multi-relational Data. <em>Proceedings of the 28th Advances in Neural Information Processing Systems (NIPS), 2013.</em></p>
+
+<p>[2] Zhen Wang, Jianwen Zhang, Jianlin Feng, Zheng Chen. Knowledge Graph Embedding by Translating on Hyperplanes. <em>Proceedings of the 28th AAAI Conference on Artificial Intelligence (AAAI), 2014.</em></p>
+
+<p>[3] Yankai Lin, Zhiyuan Liu, Maosong Sun, Yang Liu, Xuan Zhu. Learning Entity and Relation Embeddings for Knowledge Graph Completion. <em>Proceedings of the 29th AAAI Conference on Artificial Intelligence (AAAI), 2015.</em></p>
+
+<p>[4] Guoliang Ji, Shizhu He, Liheng Xu, Kang Liu, Jun Zhao. Knowledge Graph Embedding via Dynamic Mapping Matrix. <em>Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics (ACL), 2015.</em></p>
+
+<p>[5] Han Xiao, Minlie Huang, Xiaoyan Zhu. From One Point to a Manifold: Knowledge Graph Embedding for Precise Link Prediction. <em>Proceedings of the 25th International Joint Conference on Artificial Intelligence (IJCAI), 2016.</em></p>
+
+<p>[6] Benjamin Recht, Christopher Ré, Stephen J. Wright, Feng Niu. Hogwild: A Lock-Free Approach to Parallelizing Stochastic Gradient Descent. <em>Proceedings of the 25th Annual Conference on Neural Information Processing Systems (NIPS), 2011.</em></p>
+
+<p>[7] Shen-Yi Zhao, Gong-Duo Zhang, Wu-Jun Li. Lock-Free Optimization for Non-Convex Problems. <em>Proceedings of the 31th AAAIConference on Artificial Intelligence (AAAI), 2017</em>.</p>
+
+<p>[8] Xiao-Fan Niu, Wu-Jun Li. ParaGraphE: A Library for Parallel Knowledge Graph Embedding. <em>arXiv. 2017.</em></p>
+
+<h3 id="open-source"><a href="#open-source">Open Source</a></h3>
+
+<ul>
+  <li>
+    <p>GitHub URL: <a href="https://github.com/LIBBLE/LIBBLE-MultiThread/">https://github.com/LIBBLE/LIBBLE-MultiThread/</a></p>
+  </li>
+  <li>
+    <p>Licence: This project follows <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache Licence 2.0</a></p>
+  </li>
+  <li>
+    <p>About Us:</p>
+
+    <p>Director: Wu-Jun Li</p>
+
+    <p>Developer: Xiao-Fan Niu</p>
+  </li>
+</ul>
+
+</div>
+
+
+    <footer class="site-footer">
+    A Library for Big Learning<br />
+
+    Using <a href="http://jekyllrb.com/">Jekyll</a>
+    
+     :: <a href="https://github.com/LIBBLE/LIBBLE-Spark">Website source</a>
+    
+    
+</footer>
+
+
+    
+
+    </div>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93186714-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+
+</html>
