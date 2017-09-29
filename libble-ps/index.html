@@ -10,8 +10,8 @@
     <meta name="description" content="A Library for Big Learning">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="https://libble.github.io/libble-ps/">
-    <link rel="alternate" type="application/rss+xml" title="LIBBLE" href="https://libble.github.io/feed.xml" />
+    <link rel="canonical" href="http://localhost:5001/libble-ps/">
+    <link rel="alternate" type="application/rss+xml" title="LIBBLE" href="http://localhost:5001/feed.xml" />
 	<link type="image/x-icon" rel="shortcut icon" href="/images/icon.png" />
     <!-- <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>-->
 	<!-- mathjax config similar to math.stackexchange -->
@@ -116,11 +116,15 @@
     
     <li><a href="/libble-spark/#introduction">Introduction</a></li>
     
+    <li><a href="/libble-spark/#empirical-comparison">Empirical Comparison</a></li>
+    
     <li><a href="/libble-spark/#tutorial">Tutorial</a></li>
     
     <li><a href="/libble-spark/#open-source">Open Source</a></li>
     
     <li><a href="/libble-spark/#api">API</a></li>
+    
+    <li><a href="/libble-spark/#development-team">Development Team</a></li>
     
     </ul>
     
@@ -132,9 +136,13 @@
     
     <li><a href="/libble-ps/#introduction">Introduction</a></li>
     
+    <li><a href="/libble-ps/#empirical-comparison">Empirical Comparison</a></li>
+    
     <li><a href="/libble-ps/#how-to-use">How to use</a></li>
     
     <li><a href="/libble-ps/#open-source">Open Source</a></li>
+    
+    <li><a href="/libble-ps/#development-team">Development Team</a></li>
     
     </ul>
     
@@ -176,7 +184,9 @@
 
 <h3 id="introduction"><a href="#introduction">Introduction</a></h3>
 
-<p>LIBBLE-PS is part of the Project LIBBLE. The current version of LIBBLE-PS includes the following machine learning algorithms:</p>
+<p>LIBBLE-PS is the LIBBLE variant implemented with the Parameter Server framework. The communication mechanism of LIBBLE-PS is based on Message-Passing Interface (MPI). LIBBLE-PS provides both data-parallel and model-parallel programming models.</p>
+
+<p>The current version of LIBBLE-PS includes the following machine learning algorithms:</p>
 
 <blockquote>
   <ul>
@@ -188,7 +198,11 @@
   </ul>
 </blockquote>
 
-<p>LIBBLE-PS uses SCOPE algorithm on Parameter Server framework. It uses multi Servers and Workers to accelerate. We choose logistic regression (LR) with a L2-norm regularization term to evaluate LIBBLE-PS and other methods. The result on webspam dataset is shown below. All the methods use 16 Workers.</p>
+<h3 id="empirical-comparison"><a href="#empirical-comparison">Empirical Comparison</a></h3>
+
+<p>The main Learning Engine for LIBBLE-PS is based on a distributed stochastic optimization algorithm called <a href="http://arxiv.org/abs/1602.00133">SCOPE (Scalable Composite OPtimization for lEarning)</a>. LIBBLE-PS can adopt multiple Servers and Workers in the same Parameter Server framework to achieve both data-parallelism and model-parallelism.</p>
+
+<p>We choose logistic regression (LR) with a L2-norm regularization term to evaluate LIBBLE-PS and other baselines. The result on webspam dataset (<a href="https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html#webspam">$350,000$ points, $16,609,143$ dimension</a>) is shown below. Here, PS-AsySGD is the asynchronous SGD based Parameter Server proposed in <a href="http://www.cs.cmu.edu/~muli/file/parameter_server_osdi14.pdf">Mu Li, et al. OSDI 2014</a>. PS-AsySGD is implemented based on <a href="https://github.com/dmlc/ps-lite">ps-lite</a> provided by the authors of <a href="http://www.cs.cmu.edu/~muli/file/parameter_server_osdi14.pdf">Mu Li, et al. OSDI 2014</a>. Most other existing Parameter Server baselines have similar performance as PS-AsySGD. Here, we do not report the performance of them. Spark-SCOPE is the SCOPE implemented on Spark, which is included in LIBBLE-Spark. PS-SCOPE is LIBBLE-PS with the learning engine SCOPE. PS-SCOPE (1 Server) is the PS-SCOPE with one server, and PS-SCOPE (2 Servers) is the PS-SCOPE with two servers. All the methods adopt 16 Workers.</p>
 
 <div align="center">
 
@@ -196,7 +210,7 @@
 
   </div>
 
-<p>We also evaluate our methods’ speedup compared to $PS-AsySGD$. The time is recorded when the gap between objective function value and the optimal value is less than $10^{-3}$. The result of logistic regression with L2-norm on webspam dataset is shown below. All the methods use 16 Workers.</p>
+<p>We also report our methods’ speedup compared to PS-AsySGD. The time is recorded when the gap between the objective function value and the optimal value is less than $10^{-3}$. The result of logistic regression with L2-norm on webspam dataset is shown below. All the methods use 16 Workers.</p>
 
 <div align="center">
 
@@ -208,19 +222,21 @@
 
 <p>We provide partitiondata.sh to help partition and distributedly store data. The usage method is:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="p">.</span><span class="nf">/</span><span class="n">partitiondata</span><span class="p">.</span><span class="nf">sh</span> <span class="p">[</span><span class="n">data</span> <span class="n">file</span><span class="p">]</span> <span class="p">[</span><span class="n">number</span><span class="p">]</span> <span class="p">[</span><span class="n">host</span> <span class="n">file</span><span class="p">]</span>
-  </code></pre></figure>
+<div class="highlighter-rouge"><pre class="highlight"><code>  ./partitiondata.sh [data file] [number] [host file]
+</code></pre>
+</div>
 
 <p>LIBBLE-PS uses MPI to communicate. The cluster must deploy MPI. Download LIBBLE-PS and then:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="n">cd</span> <span class="n">app</span><span class="o">/*</span> <span class="o">&amp;&amp;</span> <span class="n">make</span>
-  </code></pre></figure>
+<div class="highlighter-rouge"><pre class="highlight"><code>  cd app/* &amp;&amp; make
+</code></pre>
+</div>
 
 <p>Run LIBBLE-PS by using Python:</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="no">Python</span> <span class="o">*</span><span class="p">.</span><span class="nf">py</span>
-  </code></pre></figure>
-
+<div class="highlighter-rouge"><pre class="highlight"><code>  Python *.py
+</code></pre>
+</div>
 <p>Use the python file (*.py) to edit algorithm Configuration.</p>
 
 <h3 id="open-source"><a href="#open-source">Open Source</a></h3>
@@ -228,6 +244,20 @@
 <ul>
   <li>GitHub URL: <a href="https://github.com/LIBBLE/LIBBLE-PS/">https://github.com/LIBBLE/LIBBLE-PS/</a></li>
   <li>Licence: This project follows <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache Licence 2.0</a></li>
+</ul>
+
+<h3 id="development-team"><a href="#development-team">Development Team</a></h3>
+
+<ul>
+  <li>
+    <p>Director: <a href="http://cs.nju.edu.cn/lwj/">Wu-Jun Li</a></p>
+  </li>
+  <li>
+    <p>Developers: <a href="http://lamda.nju.edu.cn/zhanggd">Gong-Duo Zhang</a>, <a href="http://lamda.nju.edu.cn/niuxf">Xiao-Fan Niu</a>, <a href="http://lamda.nju.edu.cn/gaoh/">Hao Gao</a>, <a href="http://lamda.nju.edu.cn/zhaiyf/">Yi-Fei Zhai</a></p>
+  </li>
+  <li>
+    <p>Theory and Algorithm Designers: <a href="http://lamda.nju.edu.cn/zhaosy">Shen-Yi Zhao</a>, <a href="http://cs.nju.edu.cn/lwj/">Wu-Jun Li</a></p>
+  </li>
 </ul>
 
 </div>
