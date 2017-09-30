@@ -10,8 +10,8 @@
     <meta name="description" content="A Library for Big Learning">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://localhost:5001/libble-ps/">
-    <link rel="alternate" type="application/rss+xml" title="LIBBLE" href="http://localhost:5001/feed.xml" />
+    <link rel="canonical" href="https://libble.github.io/libble-ps/">
+    <link rel="alternate" type="application/rss+xml" title="LIBBLE" href="https://libble.github.io/feed.xml" />
 	<link type="image/x-icon" rel="shortcut icon" href="/images/icon.png" />
     <!-- <link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>-->
 	<!-- mathjax config similar to math.stackexchange -->
@@ -202,7 +202,7 @@
 
 <p>The main Learning Engine for LIBBLE-PS is based on a distributed stochastic optimization algorithm called <a href="http://arxiv.org/abs/1602.00133">SCOPE (Scalable Composite OPtimization for lEarning)</a>. LIBBLE-PS can adopt multiple Servers and Workers in the same Parameter Server framework to achieve both data-parallelism and model-parallelism.</p>
 
-<p>We choose logistic regression (LR) with a L2-norm regularization term to evaluate LIBBLE-PS and other baselines. The result on webspam dataset (<a href="https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html#webspam">$350,000$ points, $16,609,143$ dimension</a>) is shown below. Here, PS-AsySGD is the asynchronous SGD based Parameter Server proposed in <a href="http://www.cs.cmu.edu/~muli/file/parameter_server_osdi14.pdf">Mu Li, et al. OSDI 2014</a>. PS-AsySGD is implemented based on <a href="https://github.com/dmlc/ps-lite">ps-lite</a> provided by the authors of <a href="http://www.cs.cmu.edu/~muli/file/parameter_server_osdi14.pdf">Mu Li, et al. OSDI 2014</a>. Most other existing Parameter Server baselines have similar performance as PS-AsySGD. Here, we do not report the performance of them. Spark-SCOPE is the SCOPE implemented on Spark, which is included in LIBBLE-Spark. PS-SCOPE is LIBBLE-PS with the learning engine SCOPE. PS-SCOPE (1 Server) is the PS-SCOPE with one server, and PS-SCOPE (2 Servers) is the PS-SCOPE with two servers. All the methods adopt 16 Workers.</p>
+<p>We choose logistic regression (LR) with a L2-norm regularization term to evaluate LIBBLE-PS and other baselines. The result on webspam dataset (<span style="color:#b6321c">350,000 points, 16,609,143 dimension</span>) is shown below. Here, PS-AsySGD is the asynchronous SGD based Parameter Server proposed in <a href="http://www.cs.cmu.edu/~muli/file/parameter_server_osdi14.pdf">Mu Li, et al. OSDI 2014</a>. PS-AsySGD is implemented based on <a href="https://github.com/dmlc/ps-lite">ps-lite</a> provided by the authors of <a href="http://www.cs.cmu.edu/~muli/file/parameter_server_osdi14.pdf">Mu Li, et al. OSDI 2014</a>. Most other existing Parameter Server baselines have similar performance as PS-AsySGD. Here, we do not report the performance of them. Spark-SCOPE is the SCOPE implemented on Spark, which is included in LIBBLE-Spark. PS-SCOPE is LIBBLE-PS with the learning engine SCOPE. PS-SCOPE (1 Server) is the PS-SCOPE with one server, and PS-SCOPE (2 Servers) is the PS-SCOPE with two servers. All the methods adopt 16 Workers.</p>
 
 <div align="center">
 
@@ -210,7 +210,7 @@
 
   </div>
 
-<p>We also report our methods’ speedup compared to PS-AsySGD. The time is recorded when the gap between the objective function value and the optimal value is less than $10^{-3}$. The result of logistic regression with L2-norm on webspam dataset is shown below. All the methods use 16 Workers.</p>
+<p>We also report our methods’ speedup compared to PS-AsySGD. The time is recorded when the gap between the objective function value and the optimal value is less than $10^{-4}$. The result of logistic regression with L2-norm on webspam dataset is shown below. All the methods use 16 Workers.</p>
 
 <div align="center">
 

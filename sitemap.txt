@@ -1,15 +1,15 @@
 
-http://localhost:5001/cv/
-http://localhost:5001/downloads/
-http://localhost:5001/feed.xml
-http://localhost:5001/
-http://localhost:5001/libble-multithread/
-http://localhost:5001/libble-ps/
-http://localhost:5001/libble-spark/
-http://localhost:5001/css/main.css
-http://localhost:5001/news/
-http://localhost:5001/publications/
-http://localhost:5001/sitemap.txt
+https://libble.github.io/cv/
+https://libble.github.io/downloads/
+https://libble.github.io/feed.xml
+https://libble.github.io/
+https://libble.github.io/libble-multithread/
+https://libble.github.io/libble-ps/
+https://libble.github.io/libble-spark/
+https://libble.github.io/css/main.css
+https://libble.github.io/news/
+https://libble.github.io/publications/
+https://libble.github.io/sitemap.txt
 
-http://localhost:5001/blog/2016/11/09/LIBBLE-Spark-1.0.1-update
-http://localhost:5001/blog/2016/06/03/LIBBLE-Spark-Online
+https://libble.github.io/blog/2016/11/09/LIBBLE-Spark-1.0.1-update
+https://libble.github.io/blog/2016/06/03/LIBBLE-Spark-Online
