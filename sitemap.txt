@@ -3,6 +3,7 @@ http://localhost:5001/cv/
 http://localhost:5001/downloads/
 http://localhost:5001/feed.xml
 http://localhost:5001/
+http://localhost:5001/libble-dl/
 http://localhost:5001/libble-multithread/
 http://localhost:5001/libble-ps/
 http://localhost:5001/libble-spark/

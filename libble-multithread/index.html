@@ -149,6 +149,28 @@
     </li>
     
     
+    <li><a href="/libble-dl/" class="page-link">LIBBLE-DL</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/libble-dl/#introduction">Introduction</a></li>
+    
+    <li><a href="/libble-dl/#tutorial">Tutorial</a></li>
+    
+    <li><a href="/libble-dl/#configure-environment">Configure Environment</a></li>
+    
+    <li><a href="/libble-dl/#examples">Examples</a></li>
+    
+    <li><a href="/libble-dl/#empirical-comparison">Empirical Comparison</a></li>
+    
+    <li><a href="/libble-dl/#open-source">Open Source</a></li>
+    
+    <li><a href="/libble-dl/#development-team">Development Team</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    
      <li><a href="/publications/" class="page-link">Publications</a>
     
     </li>
@@ -197,13 +219,12 @@ implemented methods in the current version include TransE[1], TransH[2], TransR[
 
 <p>To start training, you can input a command like this:</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>./train -nthreads 10 -method TransE -path data/WN18 -dim 50 -margin 4 -nepoches 1000 -nbatches 1 -use_tmp 0 
-</code></pre>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./train <span class="nt">-nthreads</span> 10 <span class="nt">-method</span> TransE <span class="nt">-path</span> data/WN18 <span class="nt">-dim</span> 50 <span class="nt">-margin</span> 4 <span class="nt">-nepoches</span> 1000 <span class="nt">-nbatches</span> 1 <span class="nt">-use_tmp</span> 0 
+</code></pre></div></div>
 
 <p>Several parameters can be set by the command line. They are:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>-nthreads : The number of threads for executing. (default: 10)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-nthreads : The number of threads for executing. (default: 10)
 
 -path: The path of data. (default: data/FB15k)
 
@@ -229,8 +250,7 @@ implemented methods in the current version include TransE[1], TransH[2], TransR[
 -orth_value (only in TransH) : The orthogonal parameter \episilon in TransH. (default: 0.1)
 
 -dim2 (only in TransR) : The dimension of relational space in TransR. (default: equal to -dim)
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>After training with a notice “the embeddings have already been saved in files.”, embeddings are saved in the same data path of that dataset. For example, after you run TransE on data/WN18, you can find two files named “TransE_entity_vec.txt” and “TransE_relation_vec.txt” in that path. Those files can be read by the testing program during the testing procedure.</p>
 
@@ -238,33 +258,30 @@ implemented methods in the current version include TransE[1], TransH[2], TransR[
 
 <p>After you have saved embeddings in files, you can start testing with a command like this:</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>./test -nthreads 10 -method TransE -path data/WN18 -l1_norm 1
-</code></pre>
-</div>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./test <span class="nt">-nthreads</span> 10 <span class="nt">-method</span> TransE <span class="nt">-path</span> data/WN18 <span class="nt">-l1_norm</span> 1
+</code></pre></div></div>
 
 <p>Several parameters can be set by the command line. They are:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>-nthreads : The number of threads for executing. (default: 10)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-nthreads : The number of threads for executing. (default: 10)
 
 -path: The path of data. (default: data/FB15k)
 
 -method	: The method of embedding. Choice: TransE, TransH, TransR, TransD, SphereE. (default: TransE)
 
 -l1\_norm : Use L1 norm in testing. Choice: 0:L2\_norm, 1:L1_norm. (default: 1)
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The program will report the result in several popular metrics of knowledge graph embedding. They are:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mr : The value of mean rank.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mr : The value of mean rank.
 
 mrr : The value of mean reciprocal rank.
 
 hits@10 : The proportion of ranks no larger than 10.
 
 hits@1 : The porportion of ranks list at first.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>In the output, those metrics with a “f_” mark before them are the results in “filter” settings. And those without “f_” are the results in “raw” settings.</p>
 

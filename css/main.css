@@ -2,7 +2,7 @@
   border-bottom: 1px solid #ccc;
   position: relative;
   text-transform: uppercase;
-  font-size: 0.875em; }
+  font-size: 0.8em; }
 
 .site-header .site-header a {
   color: #b6321c; }
@@ -12,7 +12,7 @@
   text-decoration: none; }
 
 .site-title {
-  font-size: 1.5em;
+  font-size: 1.640625em;
   margin-top: 0.4em;
   margin-bottom: 0.3em;
   float: left;
@@ -230,7 +230,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 0.875em; }
+  font-size: 0.8em; }
 
 ul, ol {
   margin-left: 1.5em; }
@@ -264,7 +264,7 @@ pre, code {
   border: 1px solid #ccc;
   border-radius: 3px;
   font-family: Consolas;
-  font-size: 0.875em; }
+  font-size: 0.8em; }
 
 code {
   padding: 1px 5px; }
@@ -364,7 +364,7 @@ ul.listing li.listing-item a {
     margin-bottom: 1.5em; }
 
 .post-meta {
-  font-size: 0.875em;
+  font-size: 0.8em;
   color: #888; }
 
 .post-link {
