@@ -208,7 +208,7 @@
 
 <p>LIBBLE-DL is the LIBBLE variant implemented on Pytorch.</p>
 
-<p>PyTorch is a deep learning framework for fast, flexible experimentation.However，PyTorch only provides an MPI-like interface for exchanging tensor data across multi-machine networks.</p>
+<p>PyTorch is a deep learning framework for fast, flexible experimentation. However，PyTorch only provides an MPI-like interface for exchanging tensor data across multi-machine networks.</p>
 
 <p>To handle different kinds of application scenarios, we design and develop three distributed deep learning frameworks on PyTorch: MR-DisPyTorch, RA-DisPyTorch and PS-DisPyTorch. Users can choose suitable framework according to their specific need in real applications.</p>
 
@@ -280,7 +280,7 @@
           <td>define optimizer (only on master node)</td>
         </tr>
         <tr>
-          <td><code class="highlighter-rouge">adjut</code></td>
+          <td><code class="highlighter-rouge">adjust</code></td>
           <td>epochs set the learning rate to the initial LR decayed by $10$ (only on master node)</td>
         </tr>
         <tr>
@@ -363,7 +363,7 @@
           <td>define optimizer</td>
         </tr>
         <tr>
-          <td><code class="highlighter-rouge">adjut</code></td>
+          <td><code class="highlighter-rouge">adjust</code></td>
           <td>epochs set the learning rate to the initial LR decayed by $10$</td>
         </tr>
         <tr>
@@ -446,7 +446,7 @@
         </tr>
         <tr>
           <td><code class="highlighter-rouge">num_batches </code></td>
-          <td>number of baches in an epoch</td>
+          <td>number of batches in an epoch</td>
         </tr>
         <tr>
           <td><code class="highlighter-rouge">model</code></td>
@@ -465,7 +465,7 @@
           <td>maximal delay time (only on server nodes)</td>
         </tr>
         <tr>
-          <td><code class="highlighter-rouge">adjut</code></td>
+          <td><code class="highlighter-rouge">adjust</code></td>
           <td>epochs set the learning rate to the initial LR decayed by $10$ (only on server node)</td>
         </tr>
         <tr>
@@ -515,7 +515,7 @@
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> node<span class="k">${</span><span class="nv">i</span><span class="k">}</span> bash
 </code></pre></div>    </div>
 
-    <p>We also provide some <code class="highlighter-rouge">.sh</code> files to do batch operations conveniently. The following commands correspond to starting all containers, stoping all containers and removing all containers, respectively:</p>
+    <p>We also provide some <code class="highlighter-rouge">.sh</code> files to do batch operations conveniently. The following commands correspond to starting all containers, stopping all containers and removing all containers, respectively:</p>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./startall.sh N
 ./stopall.sh N
 ./rmall.sh N
@@ -534,7 +534,7 @@
 <h3 id="empirical-comparison"><a href="#empirical-comparison">Empirical Comparison</a></h3>
 <ul>
   <li>Efficiency
-To compare efficiency with the method provided by Pytorch, the figure below shows the behaviors of our methods. We choose $20$-layer $ResNet$ model and $Cifar10$ dataset for evaluation. Both the training schedule and hyper-parameter settings are following the practice in <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf">[He et al., 2016]</a>. All of these four methods adopt $4$ worker nodes.We can find that our methods all outperform the method provided by Pytorch.
+To compare efficiency with the method provided by Pytorch, the figure below shows the behaviors of our methods. We choose $20$-layer $ResNet$ model and $Cifar10$ dataset for evaluation. Both the training schedule and hyper-parameter settings are following the practice in <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf">[He et al., 2016]</a>. All of these four methods adopt $4$ worker nodes. We can find that our methods all outperform the method provided by Pytorch.
     <div align="center">
 
 
