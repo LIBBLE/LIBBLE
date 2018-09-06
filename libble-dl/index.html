@@ -529,7 +529,7 @@
 <p>You can find the complete code inside the <code class="highlighter-rouge">example/cifar10</code> directory. In examples, we use <code class="highlighter-rouge">mpi</code> backend to communicate (Of course you can use other backend only if PyTorch supports it). You can start the example for MapReduce programming model with a master node and $4$ worker nodes using the following command:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpirun <span class="nt">-n</span> 5 <span class="nt">--hostfile</span> hosts python <span class="nt">-m</span> libble_dl.examples.cifar10.mapreduce
 </code></pre></div></div>
-<p>The file hosts contains a list of IP addresses, indicates which hosts to start the processes on. The usages of RA-DisPyTorch and PS-DisPyTorch are similar.</p>
+<p>The file <code class="highlighter-rouge">hosts</code> contains a list of IP addresses, indicates which hosts to start the processes on. The usages of RA-DisPyTorch and PS-DisPyTorch are similar.</p>
 
 <h3 id="empirical-comparison"><a href="#empirical-comparison">Empirical Comparison</a></h3>
 <ul>
