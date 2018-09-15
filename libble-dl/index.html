@@ -149,6 +149,22 @@
     </li>
     
     
+    <li><a href="/libble-multithread/" class="page-link">LIBBLE-MultiThread</a>
+    <ul class="sub-menu">
+    
+    <li><a href="/libble-multithread/#compilation">Compilation</a></li>
+    
+    <li><a href="/libble-multithread/#train">Train</a></li>
+    
+    <li><a href="/libble-multithread/#test">Test</a></li>
+    
+    <li><a href="/libble-multithread/#implementing-customized-method">Implementing customized method</a></li>
+    
+    </ul>
+    
+    </li>
+    
+    
     <li><a href="/libble-dl/" class="page-link">LIBBLE-DL</a>
     <ul class="sub-menu">
     
@@ -206,11 +222,9 @@
 
 <h3 id="introduction"><a href="#introduction">Introduction</a></h3>
 
-<p>LIBBLE-DL is the LIBBLE variant implemented on Pytorch.</p>
+<p>LIBBLE-DL is the LIBBLE variant for distributed deep learning, which is implemented based on PyTorch.</p>
 
-<p>PyTorch is a deep learning framework for fast, flexible experimentation. However，PyTorch only provides an MPI-like interface for exchanging tensor data across multi-machine networks.</p>
-
-<p>To handle different kinds of application scenarios, we design and develop three distributed deep learning frameworks on PyTorch: MR-DisPyTorch, RA-DisPyTorch and PS-DisPyTorch. Users can choose suitable framework according to their specific need in real applications.</p>
+<p>To handle different kinds of application scenarios, we design and develop three distributed deep learning frameworks based on PyTorch: MR-DisPyTorch, RA-DisPyTorch and PS-DisPyTorch. Users can choose suitable frameworks according to their specific need in real applications.</p>
 
 <h3 id="tutorial"><a href="#tutorial">Tutorial</a></h3>
 
@@ -218,9 +232,10 @@
   <li>
     <p>MR-DisPyTorch</p>
 
-    <p>We design and implement a distributed deep learning framework MR-DisPyTorch based on MapReduce programming model <a href="http://delivery.acm.org/10.1145/1330000/1327492/p107-dean.pdf?ip=36.152.24.174&amp;id=1327492&amp;acc=ACTIVE%20SERVICE&amp;key=BF85BBA5741FDC6E%2E180A41DAF8736F97%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&amp;__acm__=1536143614_50ab5ade242506c684bd4bae3902dc93">[Dean et al., 2008]</a>. MR-DisPyTorch adopts a synchronous update strategy. MR-DisPyTorch is able to handle the application scenarios where the network model is small, the number of distributed nodes are small and the computing sources of nodes are even.</p>
+    <p>MR-DisPyTorch is a distributed deep learning framework based on MapReduce programming model <a href="http://delivery.acm.org/10.1145/1330000/1327492/p107-dean.pdf?ip=36.152.24.174&amp;id=1327492&amp;acc=ACTIVE%20SERVICE&amp;key=BF85BBA5741FDC6E%2E180A41DAF8736F97%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&amp;__acm__=1536143614_50ab5ade242506c684bd4bae3902dc93">[Dean et al., 2008]</a>. MR-DisPyTorch adopts a synchronous update strategy. MR-DisPyTorch is able to handle the application scenarios where the network model is small, the number of distributed nodes are small and the computing sources of nodes are even.</p>
 
     <p>The source code is stored inside the <code class="highlighter-rouge">src/mapreduce</code> directory. We define two classes: <code class="highlighter-rouge">master</code> and <code class="highlighter-rouge">worker</code>, which can make users create nodes conveniently. The instances of them represent master node and worker node, respectively. Users can start a distributed deep learning task with MapReduce programming model by following the code below:</p>
+
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.distributed</span> <span class="k">as</span> <span class="n">dist</span>
 <span class="kn">from</span> <span class="nn">src.mapreduce.master</span> <span class="kn">import</span> <span class="n">master</span>
@@ -305,9 +320,10 @@
   <li>
     <p>RA-DisPyTorch</p>
 
-    <p>We design and implement a decentralized distributed deep learning framework RA-DisPyTorch based on Ring Allreduce programming model <a href="https://github.com/baidu-research/baidu-allreduce">[Gibiansky et al., 2017]</a>. RA-DisPyTorch adopts a synchronous update strategy. RA-DisPyTorch is able to handle the application scenarios where the network model is large, the number of distributed nodes are large and the computing sources of nodes are even.</p>
+    <p>RA-DisPyTorch is a decentralized distributed deep learning framework based on Ring AllReduce programming model <a href="https://github.com/baidu-research/baidu-allreduce">[Gibiansky et al., 2017]</a>. RA-DisPyTorch adopts a synchronous update strategy. RA-DisPyTorch is able to handle the application scenarios where the network model is large, the number of distributed nodes are large and the computation sources of nodes are even.</p>
 
-    <p>The source code is stored inside the <code class="highlighter-rouge">src/ring</code> directory. There is only one kind of compute node in Ring Allreduce programming model. Therefore, we define <code class="highlighter-rouge">node</code> class, each instance of which represent a compute node. Users can start a distributed deep learning task with Ring Allreduce programming model by following the code below:</p>
+    <p>The source code is stored inside the <code class="highlighter-rouge">src/ring</code> directory. There is only one kind of computation node in Ring AllReduce programming model. Therefore, we define a <code class="highlighter-rouge">node</code> class, each instance of which represents a computation node. Users can start a distributed deep learning task with Ring AllReduce programming model by following the code below:</p>
+
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.distributed</span> <span class="k">as</span> <span class="n">dist</span>
 <span class="kn">from</span> <span class="nn">src.ring.node</span> <span class="kn">import</span> <span class="n">node</span>
@@ -388,9 +404,10 @@
   <li>
     <p>PS-DisPyTorch</p>
 
-    <p>We design and implement a distributed deep learning framework PS-DisPyTorch based on Parameter Server programming model <a href="https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-li_mu.pdf">[Li et al., 2014]</a>. PS-DisPyTorch supports synchronous, asynchronous and semi-synchronous update strategy asynchronous. Synchronous strategy is able to handle the application scenarios where the deep learning model is medium, the number of distributed nodes are medium and the computing sources of nodes are even. Asynchronous and semi-synchronous strategy are able to handle the application scenarios where the deep learning model is medium, the number of distributed nodes are medium and the computing sources of nodes are not even.</p>
+    <p>PS-DisPyTorch is a distributed deep learning framework based on Parameter Server programming model <a href="https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-li_mu.pdf">[Li et al., 2014]</a>. PS-DisPyTorch supports synchronous, asynchronous and semi-synchronous (stale-synchronous) update strategies. Synchronous strategy is able to handle the application scenarios where the size of deep learning model is medium, the number of distributed nodes are medium and the computation sources of nodes are even. Asynchronous and semi-synchronous strategies are able to handle the application scenarios where the size of deep learning model is medium, the number of distributed nodes are medium and the computation sources of nodes are not even.</p>
 
-    <p>The source code is stored inside the <code class="highlighter-rouge">src/ps</code> directory. We define three classes: <code class="highlighter-rouge">coordinator</code>, <code class="highlighter-rouge">server</code> and <code class="highlighter-rouge">worker</code>, which’s instances represent coordinator node ,server node and worker node, respectively. Users can start a distributed deep learning task with Parameter Server programming model by following the code below:</p>
+    <p>The source code is stored inside the <code class="highlighter-rouge">src/ps</code> directory. We define three classes: <code class="highlighter-rouge">coordinator</code>, <code class="highlighter-rouge">server</code> and <code class="highlighter-rouge">worker</code>, whose instances represent coordinator node, server node and worker node, respectively. Users can start a distributed deep learning task with Parameter Server programming model by following the code below:</p>
+
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.distributed</span> <span class="k">as</span> <span class="n">dist</span>
 <span class="kn">from</span> <span class="nn">src.ps.coordinator</span> <span class="kn">import</span> <span class="n">coordinator</span>
@@ -486,7 +503,7 @@
 </ul>
 
 <h3 id="configure-environment"><a href="#configure-environment">Configure Environment</a></h3>
-<p>We provide a docker image for quickly configuring.</p>
+<p>LIBBLE-DL provides a docker image for quick configuration.</p>
 <ul>
   <li>
     <p>Prerequisites</p>
@@ -511,7 +528,7 @@
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bootmpipytorch.sh arg1 arg2
 </code></pre></div>    </div>
 
-    <p>The first argument indicates the number of containers you want to create. The second argument indicates the path to bind mount a volume. After run the <code class="highlighter-rouge">.sh</code> file, we will have N containers named from $node0$ to $node${N-1}$. We can enter any one of these containers to do further operations by the following command:</p>
+    <p>The first argument indicates the number of containers you want to create. The second argument indicates the path to bind mount a volume. After run the <code class="highlighter-rouge">.sh</code> file, we will have N containers named from $node_0$ to $node_{N-1}$. We can enter any one of these containers to do further operations by the following command:</p>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> node<span class="k">${</span><span class="nv">i</span><span class="k">}</span> bash
 </code></pre></div>    </div>
 
@@ -526,15 +543,18 @@
 <h3 id="examples"><a href="#examples">Examples</a></h3>
 <p>We give examples of using these three distributed deep learning frameworks. We choose $20$-layer $ResNet$ model and $Cifar10$ dataset for our examples. Both the training schedule and hyper-parameter settings are following the practice in <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf">[He et al., 2016]</a>.</p>
 
-<p>You can find the complete code inside the <code class="highlighter-rouge">example/cifar10</code> directory. In examples, we use <code class="highlighter-rouge">mpi</code> backend to communicate (Of course you can use other backend only if PyTorch supports it). You can start the example for MapReduce programming model with a master node and $4$ worker nodes using the following command:</p>
+<p>You can find the complete code inside the <code class="highlighter-rouge">example/cifar10</code> directory. In examples, we use <code class="highlighter-rouge">mpi</code> backend to communicate (Of course you can use other backend as long as PyTorch supports it). You can start the example for MapReduce programming model with a master node and $4$ worker nodes using the following command:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpirun <span class="nt">-n</span> 5 <span class="nt">--hostfile</span> hosts python <span class="nt">-m</span> libble_dl.examples.cifar10.mapreduce
 </code></pre></div></div>
-<p>The file <code class="highlighter-rouge">hosts</code> contains a list of IP addresses, indicates which hosts to start the processes on. The usages of RA-DisPyTorch and PS-DisPyTorch are similar.</p>
+<p>The file <code class="highlighter-rouge">hosts</code> contains a list of IP addresses, indicating which hosts to start the processes on. The usages of RA-DisPyTorch and PS-DisPyTorch are similar.</p>
 
 <h3 id="empirical-comparison"><a href="#empirical-comparison">Empirical Comparison</a></h3>
 <ul>
-  <li>Efficiency
-To compare efficiency with the method provided by Pytorch, the figure below shows the behaviors of our methods. We choose $20$-layer $ResNet$ model and $Cifar10$ dataset for evaluation. Both the training schedule and hyper-parameter settings are following the practice in <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf">[He et al., 2016]</a>. All of these four methods adopt $4$ worker nodes. We can find that our methods all outperform the method provided by Pytorch.
+  <li>
+    <p>Efficiency</p>
+
+    <p>We compare MR-DisPyTorch, RA-DisPyTorch and PS-DisPyTorch with the AllReduce method provided in PyTorch. We choose $20$-layer $ResNet$ model and $Cifar10$ dataset for evaluation. Both the training schedule and hyper-parameter settings are following the practice in <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf">[He et al., 2016]</a>. All of these four methods adopt $4$ worker nodes. MR-DisPyTorch, RA-DisPyTorch and PS-DisPyTorch can outperform the method provided in PyTorch.</p>
+
     <div align="center">
 
 
@@ -544,8 +564,9 @@ To compare efficiency with the method provided by Pytorch, the figure below show
 </div>
   </li>
   <li>
-    <p>Speedup
-Under the same experiment settings, we also investigate the speedup of these methods by changing the numbers of worker nodes. The speedup is defined as follows: $speedup=\frac{(time~with~1~worker~node)}{(time~with~x~worker~nodes)}$. And we choose $x=2,4,6$. We find that our methods are closer to the ideal speedup because of less communication cost or less synchronization cost.</p>
+    <p>Speedup</p>
+
+    <p>Under the same experimental settings, we also compare the speedup of MR-DisPyTorch, RA-DisPyTorch and PS-DisPyTorch with that of the method provided in PyTorch by changing the numbers of worker nodes. The speedup is defined as follows: $speedup=\frac{(time~with~1~worker~node)}{(time~with~x~worker~nodes)}$. And we choose $x=2,4,6$. We find that MR-DisPyTorch, RA-DisPyTorch and PS-DisPyTorch have better speedup than the method provided in PyTorch.</p>
 
     <div align="center">
 

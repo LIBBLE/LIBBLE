@@ -2,7 +2,7 @@
   border-bottom: 1px solid #ccc;
   position: relative;
   text-transform: uppercase;
-  font-size: 0.8em; }
+  font-size: 0.64em; }
 
 .site-header .site-header a {
   color: #b6321c; }
@@ -12,14 +12,14 @@
   text-decoration: none; }
 
 .site-title {
-  font-size: 1.640625em;
+  font-size: 2.05em;
   margin-top: 0.4em;
   margin-bottom: 0.3em;
   float: left;
   letter-spacing: 1px; }
 
 .site-description {
-  font-size: 0.66em;
+  font-size: 0.64em;
   float: left;
   text-align: left;
   margin-top: 50px;
@@ -230,7 +230,7 @@ figure > img {
   display: block; }
 
 figcaption {
-  font-size: 0.8em; }
+  font-size: 0.875em; }
 
 ul, ol {
   margin-left: 1.5em; }
@@ -264,7 +264,7 @@ pre, code {
   border: 1px solid #ccc;
   border-radius: 3px;
   font-family: Consolas;
-  font-size: 0.8em; }
+  font-size: 0.875em; }
 
 code {
   padding: 1px 5px; }
@@ -289,7 +289,7 @@ pre {
   list-style-type: decimal; }
 
 .footnotes ol {
-  font-size: 0.66em;
+  font-size: 0.64em;
   color: #888; }
 
 ul.listing {
@@ -309,7 +309,7 @@ ul.listing li.listing-item a {
   color: #b6321c; }
 
 .site-footer {
-  font-size: 0.66em;
+  font-size: 0.64em;
   color: #888;
   border-top: 1px solid #ccc;
   padding-top: 1.5em;
@@ -364,7 +364,7 @@ ul.listing li.listing-item a {
     margin-bottom: 1.5em; }
 
 .post-meta {
-  font-size: 0.8em;
+  font-size: 0.875em;
   color: #888; }
 
 .post-link {
@@ -509,7 +509,7 @@ ul.listing li.listing-item a {
 .captioned-img {
   text-align: center;
   border: none;
-  font-size: 0.66em;
+  font-size: 0.64em;
   overflow: hidden; }
 
 .captioned-img img {
