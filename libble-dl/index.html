@@ -234,18 +234,17 @@
 
     <p>MR-DisPyTorch is a distributed deep learning framework based on MapReduce programming model <a href="http://delivery.acm.org/10.1145/1330000/1327492/p107-dean.pdf?ip=36.152.24.174&amp;id=1327492&amp;acc=ACTIVE%20SERVICE&amp;key=BF85BBA5741FDC6E%2E180A41DAF8736F97%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&amp;__acm__=1536143614_50ab5ade242506c684bd4bae3902dc93">[Dean et al., 2008]</a>. MR-DisPyTorch adopts a synchronous update strategy. MR-DisPyTorch is able to handle the application scenarios where the network model is small, the number of distributed nodes are small and the computing sources of nodes are even.</p>
 
-    <p>The source code is stored inside the <code class="highlighter-rouge">src/mapreduce</code> directory. We define two classes: <code class="highlighter-rouge">master</code> and <code class="highlighter-rouge">worker</code>, which can make users create nodes conveniently. The instances of them represent master node and worker node, respectively. Users can start a distributed deep learning task with MapReduce programming model by following the code below:</p>
+    <p>The source code is stored inside the <code class="highlighter-rouge">dispytorch/mapreduce</code> directory. We define two classes: <code class="highlighter-rouge">master</code> and <code class="highlighter-rouge">worker</code>, which can make users create nodes conveniently. The instances of them represent master node and worker node, respectively. Users can start a distributed deep learning task with MapReduce programming model by following the code below:</p>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.distributed</span> <span class="k">as</span> <span class="n">dist</span>
-<span class="kn">from</span> <span class="nn">src.mapreduce.master</span> <span class="kn">import</span> <span class="n">master</span>
-<span class="kn">from</span> <span class="nn">src.mapreduce.worker</span> <span class="kn">import</span> <span class="n">worker</span>
+<span class="kn">import</span> <span class="nn">dispytorch</span>
 <span class="n">rank</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">get_rank</span><span class="p">()</span>
 <span class="n">world_size</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">get_world_size</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-  <span class="n">n</span> <span class="o">=</span> <span class="n">master</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">dispytorch</span><span class="o">.</span><span class="n">mapreduce</span><span class="o">.</span><span class="n">master</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-  <span class="n">n</span> <span class="o">=</span> <span class="n">worker</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span> 
+  <span class="n">n</span> <span class="o">=</span> <span class="n">dispytorch</span><span class="o">.</span><span class="n">mapreduce</span><span class="o">.</span><span class="n">worker</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span> 
 <span class="n">n</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
 </code></pre></div>    </div>
     <p>Parameters of <code class="highlighter-rouge">master</code> and <code class="highlighter-rouge">worker</code> are listed as following:</p>
@@ -322,14 +321,14 @@
 
     <p>RA-DisPyTorch is a decentralized distributed deep learning framework based on Ring AllReduce programming model <a href="https://github.com/baidu-research/baidu-allreduce">[Gibiansky et al., 2017]</a>. RA-DisPyTorch adopts a synchronous update strategy. RA-DisPyTorch is able to handle the application scenarios where the network model is large, the number of distributed nodes are large and the computation sources of nodes are even.</p>
 
-    <p>The source code is stored inside the <code class="highlighter-rouge">src/ring</code> directory. There is only one kind of computation node in Ring AllReduce programming model. Therefore, we define a <code class="highlighter-rouge">node</code> class, each instance of which represents a computation node. Users can start a distributed deep learning task with Ring AllReduce programming model by following the code below:</p>
+    <p>The source code is stored inside the <code class="highlighter-rouge">dispytorch/ring</code> directory. There is only one kind of computation node in Ring AllReduce programming model. Therefore, we define a <code class="highlighter-rouge">node</code> class, each instance of which represents a computation node. Users can start a distributed deep learning task with Ring AllReduce programming model by following the code below:</p>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.distributed</span> <span class="k">as</span> <span class="n">dist</span>
-<span class="kn">from</span> <span class="nn">src.ring.node</span> <span class="kn">import</span> <span class="n">node</span>
+<span class="kn">import</span> <span class="nn">dispytorch</span>
 <span class="n">rank</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">get_rank</span><span class="p">()</span>
 <span class="n">world_size</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">get_world_size</span><span class="p">()</span>
-<span class="n">n</span> <span class="o">=</span> <span class="n">node</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span> 
+<span class="n">n</span> <span class="o">=</span> <span class="n">dispytorch</span><span class="o">.</span><span class="n">ring</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span> 
 <span class="n">n</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
 </code></pre></div>    </div>
     <p>Parameters of <code class="highlighter-rouge">node</code> are listed as following:</p>
@@ -406,21 +405,19 @@
 
     <p>PS-DisPyTorch is a distributed deep learning framework based on Parameter Server programming model <a href="https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-li_mu.pdf">[Li et al., 2014]</a>. PS-DisPyTorch supports synchronous, asynchronous and semi-synchronous (stale-synchronous) update strategies. Synchronous strategy is able to handle the application scenarios where the size of deep learning model is medium, the number of distributed nodes are medium and the computation sources of nodes are even. Asynchronous and semi-synchronous strategies are able to handle the application scenarios where the size of deep learning model is medium, the number of distributed nodes are medium and the computation sources of nodes are not even.</p>
 
-    <p>The source code is stored inside the <code class="highlighter-rouge">src/ps</code> directory. We define three classes: <code class="highlighter-rouge">coordinator</code>, <code class="highlighter-rouge">server</code> and <code class="highlighter-rouge">worker</code>, whose instances represent coordinator node, server node and worker node, respectively. Users can start a distributed deep learning task with Parameter Server programming model by following the code below:</p>
+    <p>The source code is stored inside the <code class="highlighter-rouge">dispytorch/ps</code> directory. We define three classes: <code class="highlighter-rouge">coordinator</code>, <code class="highlighter-rouge">server</code> and <code class="highlighter-rouge">worker</code>, whose instances represent coordinator node, server node and worker node, respectively. Users can start a distributed deep learning task with Parameter Server programming model by following the code below:</p>
 
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.distributed</span> <span class="k">as</span> <span class="n">dist</span>
-<span class="kn">from</span> <span class="nn">src.ps.coordinator</span> <span class="kn">import</span> <span class="n">coordinator</span>
-<span class="kn">from</span> <span class="nn">src.ps.server</span> <span class="kn">import</span> <span class="n">server</span>
-<span class="kn">from</span> <span class="nn">src.ps.worker</span> <span class="kn">import</span> <span class="n">worker</span>
+<span class="kn">import</span> <span class="nn">dispytorch</span>
 <span class="n">rank</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">get_rank</span><span class="p">()</span>
 <span class="n">world_size</span> <span class="o">=</span> <span class="n">dist</span><span class="o">.</span><span class="n">get_world_size</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-  <span class="n">n</span> <span class="o">=</span> <span class="n">coordinator</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">dispytorch</span><span class="o">.</span><span class="n">ps</span><span class="o">.</span><span class="n">coordinator</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
 <span class="k">elif</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">rank</span> <span class="o">&lt;=</span> <span class="n">num_servers</span><span class="p">:</span>
-  <span class="n">n</span> <span class="o">=</span> <span class="n">server</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">dispytorch</span><span class="o">.</span><span class="n">ps</span><span class="o">.</span><span class="n">server</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-  <span class="n">n</span> <span class="o">=</span> <span class="n">worker</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">dispytorch</span><span class="o">.</span><span class="n">ps</span><span class="o">.</span><span class="n">worker</span><span class="p">(</span><span class="o">**</span><span class="n">args</span><span class="p">)</span>
 <span class="n">n</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
 </code></pre></div>    </div>
     <p>Parameters of <code class="highlighter-rouge">coordinator</code>, <code class="highlighter-rouge">server</code> and <code class="highlighter-rouge">worker</code> are listed as following:</p>
