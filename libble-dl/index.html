@@ -541,7 +541,7 @@
 <p>We give examples of using these three distributed deep learning frameworks. We choose $20$-layer $ResNet$ model and $CIFAR10$ dataset for our examples. Both the training schedule and hyper-parameter settings follow the practice in <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf">[He et al., 2016]</a>.</p>
 
 <p>You can find the complete code inside the <code class="highlighter-rouge">example/cifar10</code> directory. In examples, we use <code class="highlighter-rouge">mpi</code> backend to communicate (You can also use other backend as long as PyTorch supports it). You can start the example for MapReduce programming model with a master node and $4$ worker nodes using the following command:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpirun <span class="nt">-n</span> 5 <span class="nt">--hostfile</span> hosts python <span class="nt">-m</span> libble_dl.examples.cifar10.mapreduce
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mpirun <span class="nt">-n</span> 5 <span class="nt">--hostfile</span> hosts python <span class="nt">-m</span> LIBBLE-DL.examples.cifar10.mapreduce
 </code></pre></div></div>
 <p>The file <code class="highlighter-rouge">hosts</code> contains a list of IP addresses, indicating which hosts to start the processes on. The usages of RA-DisPyTorch and PS-DisPyTorch are similar.</p>
 
